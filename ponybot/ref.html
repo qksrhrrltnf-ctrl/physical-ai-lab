@@ -1,0 +1,26 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>참고 자료 · 자율주행(포니봇)</title><meta name="description" content="참고 자료 · 자율주행(포니봇)"><meta name="author" content="반곡고 기술교사"><style>html.locked body>*:not(#gate){display:none!important}#gate{display:none}html.locked #gate{display:grid}
+#gate{position:fixed;inset:0;z-index:9999;place-items:center;background:#fbfaf6;font-family:"Paperlogy","Pretendard","Malgun Gothic",system-ui,sans-serif;padding:20px}
+#gate .gbox{width:min(380px,100%);background:#fff;border:1.5px solid #e2ded2;border-radius:20px;padding:28px 26px;text-align:center;box-shadow:0 12px 32px rgba(0,0,0,.08)}
+#gate .lock{width:54px;height:54px;margin:0 auto 10px;border-radius:16px;background:#e9f7ef;display:grid;place-items:center;font-size:26px}
+#gate h1{margin:0 0 4px;font-size:22px;font-weight:800;letter-spacing:-.02em;color:#16150f}#gate p{margin:0 0 16px;color:#6f6b61;font-size:14.5px;line-height:1.5}
+#gate input{width:100%;font:inherit;font-size:28px;font-weight:800;letter-spacing:.4em;text-align:center;padding:10px 8px 10px 20px;border:2px solid #e2ded2;border-radius:14px;outline:none}
+#gate input:focus{border-color:#1fa463}#gate button{margin-top:12px;width:100%;font:inherit;font-size:16px;font-weight:800;color:#fff;background:#1fa463;border:0;border-radius:12px;padding:11px;cursor:pointer}
+#gate .err{color:#b42318;font-size:14px;min-height:20px;margin:8px 0 0}#gate details{margin-top:14px;font-size:13px;color:#9b978c}#gate summary{cursor:pointer}#gate a{color:#17834f;font-size:13.5px}</style>
+<script>(function(){var H="1f001ae86f19ae1b3bd6696d1b30eab9d4c00fd0502f72a317f9a6f96c55167e";try{if(localStorage.getItem("lab-pass-ponybot")===H)return;}catch(e){}document.documentElement.classList.add("locked");})();</script>
+<link rel="stylesheet" href="../assets/site.css"></head><body><div id="gate"><form class="gbox" onsubmit="return labGate(event)"><div class="lock">🔒</div><h1>자율주행(포니봇) 실습</h1>
+<p>실습에 참여하는 분만 들어옵니다.<br>강사가 알려 드린 <b>네 자리 입장 코드</b>를 넣어 주십시오.</p>
+<input id="gcode" inputmode="numeric" autocomplete="off" maxlength="4" pattern="[0-9]*" aria-label="입장 코드" autofocus>
+<button type="submit">입장</button><p class="err" id="gerr"></p>
+<details><summary>힌트</summary>연수일 관련</details>
+<p style="margin:14px 0 0"><a href="../">← 피지컬AI 실습실로</a></p></form></div>
+<script>async function labGate(e){e.preventDefault();var v=document.getElementById("gcode").value.trim();
+var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("physai-lab:ponybot:"+v));
+var h=[...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,"0")}).join("");
+if(h==="1f001ae86f19ae1b3bd6696d1b30eab9d4c00fd0502f72a317f9a6f96c55167e"){try{localStorage.setItem("lab-pass-ponybot",h)}catch(_){}document.documentElement.classList.remove("locked");}
+else{document.getElementById("gerr").textContent="코드가 맞지 않습니다. 다시 확인해 주십시오.";}return false;}</script>
+<header class="top"><div class="wrap"><a class="brand" href="../">피지컬AI <span>실습실</span><small>자율주행(포니봇)</small></a><nav class="nav"><a href="index.html">교시별 진행</a><a href="deck.html" target=_blank>교안 ↗</a><a href="tools.html">실습 도구</a><a href="codes.html">MakeCode 코드</a><a href="setup.html">준비·연결</a><a href="ref.html" class=on>참고 자료</a></nav></div></header>
+<div class="wrap head"><p class="kick">REFERENCES</p><h1>참고 자료</h1><p class="lead">실습 뒤 학교 수업을 준비할 때 보는 자료입니다.</p></div>
+<main class="wrap"><div class="refs"><a class="ref" href="https://boundaryx.io" target="_blank" rel="noopener"><b>boundaryX ↗</b><span>AI 포니봇 전용 편집기와 출력물(표지판 등)</span></a><a class="ref" href="https://qksrhrrltnf-ctrl.github.io/microbit-ai-control/" target="_blank" rel="noopener"><b>micro:bit AI 제어 웹앱 ↗</b><span>손 모양 · 음성 · 표지판 · 사물 인식 결과를 블루투스로 마이크로비트에 보냅니다</span></a><a class="ref" href="https://makecode.microbit.org/" target="_blank" rel="noopener"><b>MakeCode for micro:bit ↗</b><span>기본 편집기. 포니봇 확장을 직접 넣을 때 씁니다</span></a><a class="ref" href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener"><b>Teachable Machine ↗</b><span>표지판 이미지 분류 모델 만들기</span></a></div></main>
+<footer><div class="wrap"><span>피지컬AI 실습실</span><span>제작 · <b>반곡고 기술교사</b></span></div></footer>
+<script src="../assets/site.js"></script></body></html>

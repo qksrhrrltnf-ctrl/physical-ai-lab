@@ -1,0 +1,92 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>실습 도구 · 로봇팔(라쿤봇)</title><meta name="description" content="실습 도구 · 로봇팔(라쿤봇)"><meta name="author" content="반곡고 기술교사"><style>html.locked body>*:not(#gate){display:none!important}#gate{display:none}html.locked #gate{display:grid}
+#gate{position:fixed;inset:0;z-index:9999;place-items:center;background:#fbfaf6;font-family:"Paperlogy","Pretendard","Malgun Gothic",system-ui,sans-serif;padding:20px}
+#gate .gbox{width:min(380px,100%);background:#fff;border:1.5px solid #e2ded2;border-radius:20px;padding:28px 26px;text-align:center;box-shadow:0 12px 32px rgba(0,0,0,.08)}
+#gate .lock{width:54px;height:54px;margin:0 auto 10px;border-radius:16px;background:#e9f7ef;display:grid;place-items:center;font-size:26px}
+#gate h1{margin:0 0 4px;font-size:22px;font-weight:800;letter-spacing:-.02em;color:#16150f}#gate p{margin:0 0 16px;color:#6f6b61;font-size:14.5px;line-height:1.5}
+#gate input{width:100%;font:inherit;font-size:28px;font-weight:800;letter-spacing:.4em;text-align:center;padding:10px 8px 10px 20px;border:2px solid #e2ded2;border-radius:14px;outline:none}
+#gate input:focus{border-color:#1fa463}#gate button{margin-top:12px;width:100%;font:inherit;font-size:16px;font-weight:800;color:#fff;background:#1fa463;border:0;border-radius:12px;padding:11px;cursor:pointer}
+#gate .err{color:#b42318;font-size:14px;min-height:20px;margin:8px 0 0}#gate details{margin-top:14px;font-size:13px;color:#9b978c}#gate summary{cursor:pointer}#gate a{color:#17834f;font-size:13.5px}</style>
+<script>(function(){var H="45bc8c619de4f73f6fb8dbc68b7c8cac2ae1945b3dc48305eb1b305d3424f022";try{if(localStorage.getItem("lab-pass-raccoonbot")===H)return;}catch(e){}document.documentElement.classList.add("locked");})();</script>
+<link rel="stylesheet" href="../assets/site.css"></head><body><div id="gate"><form class="gbox" onsubmit="return labGate(event)"><div class="lock">🔒</div><h1>로봇팔(라쿤봇) 실습</h1>
+<p>실습에 참여하는 분만 들어옵니다.<br>강사가 알려 드린 <b>네 자리 입장 코드</b>를 넣어 주십시오.</p>
+<input id="gcode" inputmode="numeric" autocomplete="off" maxlength="4" pattern="[0-9]*" aria-label="입장 코드" autofocus>
+<button type="submit">입장</button><p class="err" id="gerr"></p>
+<details><summary>힌트</summary>연수일 관련</details>
+<p style="margin:14px 0 0"><a href="../">← 피지컬AI 실습실로</a></p></form></div>
+<script>async function labGate(e){e.preventDefault();var v=document.getElementById("gcode").value.trim();
+var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("physai-lab:raccoonbot:"+v));
+var h=[...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,"0")}).join("");
+if(h==="45bc8c619de4f73f6fb8dbc68b7c8cac2ae1945b3dc48305eb1b305d3424f022"){try{localStorage.setItem("lab-pass-raccoonbot",h)}catch(_){}document.documentElement.classList.remove("locked");}
+else{document.getElementById("gerr").textContent="코드가 맞지 않습니다. 다시 확인해 주십시오.";}return false;}</script>
+<header class="top"><div class="wrap"><a class="brand" href="../">피지컬AI <span>실습실</span><small>로봇팔(라쿤봇)</small></a><nav class="nav"><a href="index.html">교시별 진행</a><a href="deck.html" target=_blank>교안 ↗</a><a href="tools.html" class=on>실습 도구</a><a href="codes.html">엔트리 코드</a><a href="setup.html">준비·연결</a><a href="ref.html">참고 자료</a><a class="pad" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener">참여판 ↗</a></nav></div></header>
+<div class="wrap head"><p class="kick">TOOLS</p><h1>실습 도구</h1>
+<p class="lead">브라우저에서 여는 도구 16가지를 교시 순서로 모았습니다. 화면을 미리 보고, 무엇을 해 볼지 확인한 뒤 엽니다.</p>
+<div class="catdesc"><div style="--c:#1fa463"><b>직접 학습</b>내가 데이터를 모으고 모델을 학습시켜 결과를 확인합니다</div><div style="--c:#2f6bd6"><b>AI 원리 보기</b>신경망과 AI가 어떻게 판단하는지 눈으로 봅니다</div><div style="--c:#e07b00"><b>로봇 시뮬레이션</b>학습된 로봇을 브라우저에서 조작하고 비교합니다</div><div style="--c:#5b6472"><b>작업 도구</b>코딩하고 로봇을 연결하는 프로그램입니다</div></div><div class="filters"><button class="on" data-f="all">전체</button><button data-f="learn" style="--c:#1fa463"><i></i>직접 학습</button><button data-f="idea" style="--c:#2f6bd6"><i></i>AI 원리 보기</button><button data-f="robot" style="--c:#e07b00"><i></i>로봇 시뮬레이션</button><button data-f="work" style="--c:#5b6472"><i></i>작업 도구</button></div></div>
+<main class="wrap"><div class="tools" id="toolgrid"><p class="pbreak" data-break="1">1교시 · 로봇팔의 이해 <a href="index.html#p1">교시로 가기 →</a></p><article class="tool" data-cat="idea" id="t-transformer" style="--c:#2f6bd6">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_transformer.jpg" alt="Transformer Explainer 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">체험</span></div><h3>Transformer Explainer</h3><p class="what">GPT-2가 다음 단어를 확률로 고르는 과정을 층마다 보여 줍니다.</p>
+<p class="try"><b>해 볼 것</b> · 문장을 넣고, 1등 단어의 확률과 온도(temperature)를 바꿔 봅니다.</p><div class="tags"><span class="chip need">첫 실행 약 600MB</span><span class="chip need">크롬</span></div>
+<div class="ft"><span class="where">1교시 · 덱 9장</span><a class="open" href="https://poloclub.github.io/transformer-explainer/" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="idea" id="t-smolvlm" style="--c:#2f6bd6">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_smolvlm.jpg" alt="SmolVLM 실시간 설명 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">강사 시연</span></div><h3>SmolVLM 실시간 설명</h3><p class="what">노트북 안의 작은 모델이 웹캠 화면을 보고 문장으로 말합니다(보는 AI).</p>
+<p class="try"><b>해 볼 것</b> · 강사 화면으로 봅니다. 물건을 비추면 무엇이라고 말하는지 확인합니다.</p><div class="tags"><span class="chip need">웹캠</span><span class="chip need">WebGPU 크롬</span><span class="chip need">모델 내려받기</span></div>
+<div class="ft"><span class="where">1교시 · 덱 11장</span><a class="open" href="https://huggingface.co/spaces/webml-community/smolvlm-realtime-webgpu" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="robot" id="t-mjswan" style="--c:#e07b00">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_mjswan.jpg" alt="휴머노이드 밀어 보기 (mjswan) 화면" loading="lazy"><span class="chip cat">로봇 시뮬레이션</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">체험</span><span class="chip st" title="피지컬AI 단계">② 가상 환경</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>휴머노이드 밀어 보기 (mjswan)</h3><p class="what">실제 판매 로봇(Unitree G1)이 강화학습한 정책으로 걷습니다. 물리 시뮬레이터(MuJoCo)가 브라우저에서 돕니다.</p>
+<p class="try"><b>해 볼 것</b> · 로봇을 마우스로 밀어 넘어뜨리고, 다시 걷게 하고, 다른 로봇으로 바꿔 봅니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
+<div class="ft"><span class="where">1교시 · 덱 30–31장</span><a class="open" href="https://ttktjmt.github.io/mjswan/" target="_blank" rel="noopener">열기 ↗</a></div></div></article><p class="pbreak" data-break="2">2교시 · 프로그램 연결과 기본 조작 <a href="index.html#p2">교시로 가기 →</a></p><article class="tool" data-cat="work" id="t-entry-hw" style="--c:#5b6472">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_entry-hw.jpg" alt="엔트리 하드웨어 연결 프로그램 화면" loading="lazy"><span class="chip cat">작업 도구</span></div>
+<div class="bd"><div class="tags"><span class="chip lv core">필수</span></div><h3>엔트리 하드웨어 연결 프로그램</h3><p class="what">엔트리와 라쿤봇을 이어 주는 프로그램입니다.</p>
+<p class="try"><b>해 볼 것</b> · 설치한 뒤 검색창에 「라쿤」을 입력해 연결합니다. 동글을 꽂고 로봇 전원을 켜 둡니다.</p><div class="tags"><span class="chip need">설치</span><span class="chip need">동글</span></div>
+<div class="ft"><span class="where">2교시 · 덱 54 · 부록 128–130장</span><a class="open" href="https://playentry.org/download/hardware" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="work" id="t-entry-ws" style="--c:#5b6472">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_entry-ws.jpg" alt="엔트리 작품 만들기 화면" loading="lazy"><span class="chip cat">작업 도구</span></div>
+<div class="bd"><div class="tags"><span class="chip lv core">필수</span></div><h3>엔트리 작품 만들기</h3><p class="what">로봇 제어 코딩과 모델 학습을 모두 여기서 합니다.</p>
+<p class="try"><b>해 볼 것</b> · 엔트리 코드 모음의 .ent 파일을 「오프라인 작품 불러오기」로 엽니다.</p><div class="tags"><span class="chip need">로그인(모델 학습)</span><span class="chip need">크롬</span></div>
+<div class="ft"><span class="where">2교시 · 덱 54–58장</span><a class="open" href="https://playentry.org/ws" target="_blank" rel="noopener">열기 ↗</a></div></div></article><p class="pbreak" data-break="3">3교시 · 로봇팔 제어 체험 <a href="index.html#p3">교시로 가기 →</a></p><article class="tool" data-cat="robot" id="t-aloha" style="--c:#e07b00">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_aloha.jpg" alt="핸드트래킹 ALOHA 로봇팔 화면" loading="lazy"><span class="chip cat">로봇 시뮬레이션</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">체험</span><span class="chip st" title="피지컬AI 단계">② 가상 환경</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span></div><h3>핸드트래킹 ALOHA 로봇팔</h3><p class="what">웹캠에 두 손을 비추면 시뮬레이션 속 ALOHA 양팔이 따라옵니다. 모방학습용 시범 데이터를 만드는 방식입니다.</p>
+<p class="try"><b>해 볼 것</b> · 「Start Camera」를 누르고 두 손을 움직입니다. 엄지와 검지를 오므리면 집게가 닫힙니다.</p><div class="tags"><span class="chip need">웹캠</span><span class="chip need">설치 없음</span></div>
+<div class="ft"><span class="where">3교시 · 덱 64장</span><a class="open" href="https://qksrhrrltnf-ctrl.github.io/aloha_ik/" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="robot" id="t-lerobot" style="--c:#e07b00">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_lerobot.jpg" alt="모방학습 시범 데이터 보기 (LeRobot) 화면" loading="lazy"><span class="chip cat">로봇 시뮬레이션</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">체험</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span></div><h3>모방학습 시범 데이터 보기 (LeRobot)</h3><p class="what">실제 로봇 시범 한 편의 카메라 영상과 관절 값 그래프를 함께 재생합니다.</p>
+<p class="try"><b>해 볼 것</b> · 예시 데이터셋을 하나 고르고, 영상이 움직일 때 관절 그래프가 어떻게 변하는지 봅니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
+<div class="ft"><span class="where">3교시 · 덱 65장</span><a class="open" href="https://huggingface.co/spaces/lerobot/visualize_dataset" target="_blank" rel="noopener">열기 ↗</a></div></div></article><p class="pbreak" data-break="4">4교시 · 제어 방식 비교 미션 <a href="index.html#p4">교시로 가기 →</a></p><article class="tool" data-cat="robot" id="t-sim2browser" style="--c:#e07b00">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_sim2browser.jpg" alt="sim2browser 로봇팔 화면" loading="lazy"><span class="chip cat">로봇 시뮬레이션</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">선택</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>sim2browser 로봇팔</h3><p class="what">같은 로봇팔을 직접(사람) · 공식(역기구학) · 학습(강화학습) 세 가지 머리로 움직여 비교합니다.</p>
+<p class="try"><b>해 볼 것</b> · 파란 목표를 끌고 YOU · ENGINEERED · LEARNED를 바꿔 가며 같은 자리를 다섯 번 비교합니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
+<div class="ft"><span class="where">4교시 · 덱 부록 137–139장</span><a class="open" href="https://rotvie.github.io/sim2browser/" target="_blank" rel="noopener">열기 ↗</a></div></div></article><p class="pbreak" data-break="6">6교시 · 인공신경망 학습 <a href="index.html#p6">교시로 가기 →</a></p><article class="tool" data-cat="work" id="t-blockcomposer" style="--c:#5b6472">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_blockcomposer.jpg" alt="로보메이션랩 블록컴포저 화면" loading="lazy"><span class="chip cat">작업 도구</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">선택 시연</span></div><h3>로보메이션랩 블록컴포저</h3><p class="what">이미 학습된 AI(색깔·사물 찾기)를 블록으로 라쿤봇에 붙입니다. 내가 학습시키는 엔트리와 비교합니다.</p>
+<p class="try"><b>해 볼 것</b> · 같은 선별 미션을 사전 학습 AI로 풀어 보고, 엔트리 모델과 무엇이 다른지 봅니다.</p><div class="tags"><span class="chip need">엔트리 연결 프로그램 먼저 끄기</span><span class="chip need">크롬</span></div>
+<div class="ft"><span class="where">6교시 · 덱 부록 145–146 · 178장</span><a class="open" href="https://robomationlab.com/BlockComposer/" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="learn" id="t-tm" style="--c:#1fa463">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_tm.jpg" alt="티처블머신 화면" loading="lazy"><span class="chip cat">직접 학습</span></div>
+<div class="bd"><div class="tags"><span class="chip lv core">핵심</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>티처블머신</h3><p class="what">웹캠으로 정상 · 불량 · 없음 사진을 모아 이미지 분류 모델을 직접 학습시킵니다.</p>
+<p class="try"><b>해 볼 것</b> · 클래스 셋을 만들고 사진을 모아 학습한 뒤, 옆 팀 모델을 틀리게 만들어 봅니다.</p><div class="tags"><span class="chip need">웹캠</span><span class="chip need">로그인 없음</span></div>
+<div class="ft"><span class="where">6교시 · 덱 90–92장</span><a class="open" href="https://teachablemachine.withgoogle.com/train/image" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="idea" id="t-flybrain" style="--c:#2f6bd6">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_flybrain.jpg" alt="초파리 뇌 시뮬레이션 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">선택</span></div><h3>초파리 뇌 시뮬레이션</h3><p class="what">실제 초파리 뇌 연결망으로 몸을 움직입니다. 뉴런이 신호를 넘겨 행동이 나오는 모습을 봅니다.</p>
+<p class="try"><b>해 볼 것</b> · Walk 버튼 없이 뇌의 한 자리를 칠해 파리를 걷게 해 봅니다.</p><div class="tags"><span class="chip need">첫 실행 76MB</span></div>
+<div class="ft"><span class="where">6교시 · 덱 부록 148–149장</span><a class="open" href="https://xenova-fruit-fly-simulation.static.hf.space/" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="idea" id="t-tfpg" style="--c:#2f6bd6">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_tfpg.jpg" alt="TensorFlow Playground 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">체험</span><span class="chip st" title="피지컬AI 단계">④ 학습</span></div><h3>TensorFlow Playground</h3><p class="what">학습률 · 은닉층 · 잡음을 바꾸며 가중치가 고쳐지는 모습을 봅니다.</p>
+<p class="try"><b>해 볼 것</b> · ▶을 누르고 은닉층 뉴런 수와 학습률을 바꿔, 손실 곡선이 어떻게 달라지는지 비교합니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
+<div class="ft"><span class="where">6교시 · 덱 94–95장</span><a class="open" href="https://playground.tensorflow.org/" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="learn" id="t-nncar" style="--c:#1fa463">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_nncar.jpg" alt="자율주행 신경망 학습시키기 화면" loading="lazy"><span class="chip cat">직접 학습</span></div>
+<div class="bd"><div class="tags"><span class="chip lv core">핵심</span><span class="chip st" title="피지컬AI 단계">② 가상 환경</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>자율주행 신경망 학습시키기</h3><p class="what">같은 신경망을 문제 카드(지도) · 따라 하기(모방) · 시행착오(강화)로 학습시키고, 처음 보는 도로 500m로 시험합니다.</p>
+<p class="try"><b>해 볼 것</b> · 안내 투어를 따라 카드 8장에 답을 붙여 학습시키고, 다른 두 방법과 결과를 비교합니다.</p><div class="tags"><span class="chip need">인터넷 없이도 됨</span><span class="chip need">한국어</span></div>
+<div class="ft"><span class="where">6교시 · 덱 96장</span><a class="open" href="../nn-car/">열기 →</a></div></div></article><article class="tool" data-cat="learn" id="t-entry-model" style="--c:#1fa463">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_entry-model.jpg" alt="엔트리 모델 학습 화면" loading="lazy"><span class="chip cat">직접 학습</span></div>
+<div class="bd"><div class="tags"><span class="chip lv core">핵심</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>엔트리 모델 학습</h3><p class="what">엔트리 안에서 정상 · 불량 · 없음 모델을 학습시켜 라쿤봇 블록에 바로 씁니다.</p>
+<p class="try"><b>해 볼 것</b> · [인공지능] → [인공지능 모델 학습하기] → 이미지 분류. 모델 이름은 「팀명_v1」로 저장합니다.</p><div class="tags"><span class="chip need">로그인</span><span class="chip need">웹캠</span></div>
+<div class="ft"><span class="where">6교시 · 덱 97–99 · 부록 150–155장</span><a class="open" href="https://playentry.org/ws" target="_blank" rel="noopener">열기 ↗</a></div></div></article><article class="tool" data-cat="learn" id="t-handpose" style="--c:#1fa463">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_handpose.jpg" alt="손 모양 학습 (micro:bit AI) 화면" loading="lazy"><span class="chip cat">직접 학습</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">선택</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>손 모양 학습 (micro:bit AI)</h3><p class="what">로그인 없이 브라우저 안에서 손 모양 세 가지를 학습시킵니다.</p>
+<p class="try"><b>해 볼 것</b> · 손 모양 셋을 30개씩 가르친 뒤, 다른 사람 손으로 시험해 봅니다.</p><div class="tags"><span class="chip need">웹캠</span><span class="chip need">로그인 없음</span></div>
+<div class="ft"><span class="where">6교시 · 덱 부록 156–157장</span><a class="open" href="https://qksrhrrltnf-ctrl.github.io/microbit-ai-control/handpose.html" target="_blank" rel="noopener">열기 ↗</a></div></div></article><p class="pbreak" data-break="7">7교시 · 학습 결과 개선 <a href="index.html#p7">교시로 가기 →</a></p><article class="tool" data-cat="idea" id="t-flyescape" style="--c:#2f6bd6">
+<div class="shot"><img src="../assets/thumbs/raccoonbot_tool_flyescape.jpg" alt="초파리 위협 회피 회로 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
+<div class="bd"><div class="tags"><span class="chip lv">선택</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>초파리 위협 회피 회로</h3><p class="what">뇌도 임계값으로 피할지 말지 정합니다. 잡음을 켜면 헛반응과 놓침이 생깁니다.</p>
+<p class="try"><b>해 볼 것</b> · 임계값과 잡음을 바꿔 헛반응 · 놓침이 어떻게 바뀌는지 보고, 신뢰도 기준값과 연결합니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
+<div class="ft"><span class="where">7교시 · 덱 부록 161–162장</span><a class="open" href="https://ak7660.github.io/fly-brain-escape/?present=1" target="_blank" rel="noopener">열기 ↗</a></div></div></article></div></main>
+<footer><div class="wrap"><span>피지컬AI 실습실</span><span>제작 · <b>반곡고 기술교사</b></span></div></footer>
+<script src="../assets/site.js"></script></body></html>

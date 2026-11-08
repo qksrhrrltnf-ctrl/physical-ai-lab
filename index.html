@@ -1,0 +1,68 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>피지컬AI 실습실</title><meta name="description" content="시뮬레이션에서 직접 학습시키고, 로봇으로 옮기기 직전까지 체험하는 피지컬AI 실습 모음"><meta name="author" content="반곡고 기술교사">
+<link rel="stylesheet" href="assets/site.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="">피지컬AI <span>실습실</span></a></div></header>
+<div class="wrap"><div class="hero2"><div><p class="kick">PHYSICAL AI LAB</p><h1 style="font-size:46px">피지컬AI 실습실</h1>
+<p class="lead">남이 만든 AI를 쓰는 데서 그치지 않고, <b>직접 데이터를 모아 학습시키고 시뮬레이션에서 평가</b>한 뒤 로봇으로 옮기기 직전까지 체험합니다. 실습에 필요한 것은 모두 여기서 엽니다.</p>
+<ol class="band"><li class="s0" data-i="0" tabindex="0" role="button"><b>1</b>과제 설정</li><li class="s1" data-i="1" tabindex="0" role="button"><b>2</b>가상 환경</li><li class="s2" data-i="2" tabindex="0" role="button"><b>3</b>데이터·시범</li><li class="s2" data-i="3" tabindex="0" role="button"><b>4</b>학습</li><li class="s2" data-i="4" tabindex="0" role="button"><b>5</b>시뮬레이션 평가</li><li class="s0" data-i="5" tabindex="0" role="button"><b>6</b>흔들기</li><li class="s0" data-i="6" tabindex="0" role="button"><b>7</b>실물로 옮기기</li></ol><p class="bdesc" id="bdesc"><b>단계를 눌러 보십시오</b>초록 단계(③ · ④ · ⑤)가 이 실습실에서 직접 해 보는 부분입니다.</p></div>
+<div class="demo"><h3>30초 체험 · 직접 가르쳐 보기</h3><p class="dsub">점을 찍어 「정상」과 「불량」을 가르치면, 작은 신경망이 바로 학습해 경계를 그립니다.</p>
+<div class="dcv" id="dcv"><canvas></canvas><div class="hint">여기를 눌러 점을 찍으십시오<br>위쪽은 정상, 아래쪽은 불량처럼<br>섞어서 찍어 봐도 됩니다</div></div>
+<div class="dbar"><button class="on" data-cls="0"><i style="background:#1fa463"></i>정상</button><button data-cls="1"><i style="background:#e8590c"></i>불량</button>
+<button id="dex">예시 데이터</button><button id="dclear">지우기</button><span class="dstat" id="dstat"></span></div>
+<p class="dnote">테두리가 검은 점은 신경망이 아직 틀리는 점입니다. 더 해 보기 → <a href="nn-car/">자율주행 신경망 학습시키기</a></p></div></div>
+<div class="courses"><a class="course" href="raccoonbot/"><div class="shot"><img src="assets/thumbs/course_raccoonbot.jpg" alt="로봇팔(라쿤봇)"></div><div class="bd"><span class="chip cat" style="--c:#2f6bd6">과정</span>
+<h2>로봇팔(라쿤봇) 실습 →</h2><p>교안 슬라이드와 교시별 흐름 · 실습 도구 · 엔트리 코드를 한곳에서 봅니다.</p>
+<div class="meta"><span class="chip lv core">🔒 입장 코드</span><span class="chip need">8교시</span><span class="chip need">도구 16</span><span class="chip need">코드 15</span></div></div></a><a class="course" href="ponybot/"><div class="shot"><img src="assets/thumbs/course_ponybot.jpg" alt="자율주행(포니봇)"></div><div class="bd"><span class="chip cat" style="--c:#2f6bd6">과정</span>
+<h2>자율주행(포니봇) 실습 →</h2><p>교안 슬라이드와 교시별 흐름 · 실습 도구 · MakeCode 코드를 한곳에서 봅니다.</p>
+<div class="meta"><span class="chip lv core">🔒 입장 코드</span><span class="chip need">8교시</span><span class="chip need">도구 14</span><span class="chip need">코드 20</span></div></div></a><a class="course" href="nn-car/"><div class="shot"><img src="assets/thumbs/course_nncar.jpg" alt="자율주행 신경망 화면"></div>
+<div class="bd"><span class="chip cat" style="--c:#1fa463">직접 학습 · 공용</span><h2>자율주행 신경망 학습시키기 →</h2><p>같은 신경망을 지도 · 모방 · 강화학습으로 가르쳐 봅니다. 입장 코드 없이 열립니다.</p></div></a></div></div><script>
+(() => {
+  // 30초 체험: 점을 찍어 가르치면 작은 신경망(2-8-1)이 실시간으로 학습해 경계를 그린다
+  const box = document.getElementById('dcv'), cv = box.querySelector('canvas'), ctx = cv.getContext('2d'), hint = box.querySelector('.hint');
+  const st = document.getElementById('dstat'), steps = [...document.querySelectorAll('.band li')], desc = document.getElementById('bdesc');
+  const DESC = ["무엇을 풀지 정합니다. 예: 컨베이어의 불량 블록 골라내기, 장애물 피해 달리기.", "실물 대신 시뮬레이터에서 먼저 해 봅니다. 부서지지 않고, 몇 번이든 다시 할 수 있습니다.", "예시를 모으거나 시범을 보입니다. 사진에 정답을 붙이고, 직접 운전해 보여 줍니다.", "모델이 예시를 보고 가중치를 조금씩 고칩니다. 오차가 줄어드는 모습을 봅니다.", "처음 보는 상황에서 시험합니다. 맞힌 비율, 혼동표, 신뢰도로 실력을 잽니다.", "조명·잡음·위치를 바꿔도 버티는지 흔들어 봅니다. 현실은 시뮬레이터보다 거칩니다.", "학습한 모델을 실제 로봇에 넣어 움직입니다. 실습실의 다음 단계입니다."], NAMES = ["과제 설정", "가상 환경", "데이터·시범", "학습", "시뮬레이션 평가", "흔들기", "실물로 옮기기"];
+  const COL = ['#1fa463', '#e8590c'];
+  let cls = 0, pts = [], it = 0, sel = -1;
+  const H = 8; let W1, b1, W2, b2;
+  const init = () => { W1 = Array.from({length: H}, () => [Math.random()*2-1, Math.random()*2-1]); b1 = Array.from({length: H}, () => Math.random()*.4-.2); W2 = Array.from({length: H}, () => Math.random()*2-1); b2 = 0; it = 0; };
+  init();
+  const fwd = (x, y) => { const h = W1.map((w, j) => Math.tanh(w[0]*x + w[1]*y + b1[j])); let o = b2; for (let j = 0; j < H; j++) o += W2[j]*h[j]; return [1/(1+Math.exp(-o)), h]; };
+  const train = (n) => { if (pts.length < 2) return; for (let k = 0; k < n; k++) for (const p of pts) {
+      const [o, h] = fwd(p.x, p.y), e = o - p.c, lr = 0.08;
+      for (let j = 0; j < H; j++) { const g = e * W2[j] * (1 - h[j]*h[j]); W2[j] -= lr*e*h[j]; W1[j][0] -= lr*g*p.x; W1[j][1] -= lr*g*p.y; b1[j] -= lr*g; }
+      b2 -= lr*e; } it += n; };
+  const light = (arr) => steps.forEach((s, i) => s.classList.toggle('lit', arr.includes(i)));
+  const show = (i) => { sel = i; steps.forEach((s, k) => s.classList.toggle('sel', k === i)); desc.innerHTML = '<b>' + (i+1) + ' ' + NAMES[i] + '</b>' + DESC[i]; };
+  steps.forEach((s, i) => { s.onclick = () => show(i); s.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(i); } }; });
+  const size = () => { const r = box.getBoundingClientRect(), d = window.devicePixelRatio || 1; cv.width = r.width*d; cv.height = r.height*d; };
+  addEventListener('resize', size); size();
+  const draw = () => {
+    const w = cv.width, h = cv.height, N = 36, cw = w/N, ch = h/N;
+    if (pts.length >= 2) { for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+        const p = fwd((i+.5)/N*2-1, (j+.5)/N*2-1)[0];
+        ctx.fillStyle = p > .5 ? `rgba(232,89,12,${(p-.5)*0.55})` : `rgba(31,164,99,${(.5-p)*0.55})`; ctx.fillRect(i*cw, j*ch, cw+1, ch+1); } }
+    else { ctx.fillStyle = '#f6f4ee'; ctx.fillRect(0, 0, w, h); }
+    const d = window.devicePixelRatio || 1;
+    for (const p of pts) { const x = (p.x+1)/2*w, y = (p.y+1)/2*h, ok = (fwd(p.x, p.y)[0] > .5 ? 1 : 0) === p.c;
+      ctx.beginPath(); ctx.arc(x, y, 7*d, 0, 7); ctx.fillStyle = COL[p.c]; ctx.fill(); ctx.lineWidth = 2.5*d; ctx.strokeStyle = ok ? '#fff' : '#16150f'; ctx.stroke(); }
+  };
+  const loop = () => {
+    if (pts.length >= 2) { train(4); const acc = pts.filter(p => (fwd(p.x, p.y)[0] > .5 ? 1 : 0) === p.c).length / pts.length;
+      st.textContent = `점 ${pts.length}개 · 학습 ${it}회 · 맞힘 ${Math.round(acc*100)}%`; light(acc >= .999 ? [2, 3, 4] : [2, 3]); }
+    else st.textContent = pts.length ? '점을 하나 더 찍으십시오' : '';
+    draw(); requestAnimationFrame(loop);
+  };
+  const add = (e) => { const r = box.getBoundingClientRect(); const x = (e.clientX - r.left)/r.width*2-1, y = (e.clientY - r.top)/r.height*2-1;
+    pts.push({x, y, c: e.shiftKey || e.button === 2 ? 1 - cls : cls}); hint.style.display = 'none'; light([2]); if (sel < 0 || sel === 2) show(2); };
+  box.addEventListener('pointerdown', (e) => { e.preventDefault(); add(e); });
+  box.addEventListener('contextmenu', (e) => e.preventDefault());
+  document.querySelectorAll('[data-cls]').forEach(b => b.onclick = () => { cls = +b.dataset.cls; document.querySelectorAll('[data-cls]').forEach(x => x.classList.toggle('on', x === b)); });
+  document.getElementById('dclear').onclick = () => { pts = []; init(); hint.style.display = ''; light([]); };
+  document.getElementById('dex').onclick = () => { pts = []; init(); hint.style.display = 'none';
+    for (let k = 0; k < 26; k++) { const a = Math.random()*6.283, r1 = Math.random()*.32, r2 = .55 + Math.random()*.3;
+      pts.push({x: Math.cos(a)*r1, y: Math.sin(a)*r1, c: 0}); pts.push({x: Math.cos(a)*r2, y: Math.sin(a)*r2, c: 1}); } show(3); };
+  loop();
+})();
+</script>
+<footer><div class="wrap"><span>피지컬AI 실습실</span><span>제작 · <b>반곡고 기술교사</b></span></div></footer>
+<script src="assets/site.js"></script></body></html>
