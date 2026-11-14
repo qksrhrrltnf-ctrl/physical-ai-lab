@@ -7,7 +7,7 @@
 #gate input{width:100%;font:inherit;font-size:28px;font-weight:800;letter-spacing:.4em;text-align:center;padding:10px 8px 10px 20px;border:2px solid #e2ded2;border-radius:14px;outline:none}
 #gate input:focus{border-color:#1fa463}#gate button{margin-top:12px;width:100%;font:inherit;font-size:16px;font-weight:800;color:#fff;background:#1fa463;border:0;border-radius:12px;padding:11px;cursor:pointer}
 #gate .err{color:#b42318;font-size:14px;min-height:20px;margin:8px 0 0}#gate details{margin-top:14px;font-size:13px;color:#9b978c}#gate summary{cursor:pointer}#gate a{color:#17834f;font-size:13.5px}</style>
-<script>(function(){var H="45bc8c619de4f73f6fb8dbc68b7c8cac2ae1945b3dc48305eb1b305d3424f022";try{if(localStorage.getItem("lab-pass-raccoonbot")===H)return;}catch(e){}document.documentElement.classList.add("locked");})();</script>
+<script>(function(){var H="27d50c1d2060966104629e5f81dc731635f45761467989a50eb469c701528b0d";try{if(localStorage.getItem("lab-pass-raccoonbot")===H)return;}catch(e){}document.documentElement.classList.add("locked");})();</script>
 <link rel="stylesheet" href="../assets/site.css"></head><body><div id="gate"><form class="gbox" onsubmit="return labGate(event)"><div class="lock">🔒</div><h1>로봇팔(라쿤봇) 실습</h1>
 <p>실습에 참여하는 분만 들어옵니다.<br>강사가 알려 드린 <b>네 자리 입장 코드</b>를 넣어 주십시오.</p>
 <input id="gcode" inputmode="numeric" autocomplete="off" maxlength="4" pattern="[0-9]*" aria-label="입장 코드" autofocus>
@@ -17,7 +17,7 @@
 <script>async function labGate(e){e.preventDefault();var v=document.getElementById("gcode").value.trim();
 var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("physai-lab:raccoonbot:"+v));
 var h=[...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,"0")}).join("");
-if(h==="45bc8c619de4f73f6fb8dbc68b7c8cac2ae1945b3dc48305eb1b305d3424f022"){try{localStorage.setItem("lab-pass-raccoonbot",h)}catch(_){}document.documentElement.classList.remove("locked");}
+if(h==="27d50c1d2060966104629e5f81dc731635f45761467989a50eb469c701528b0d"){try{localStorage.setItem("lab-pass-raccoonbot",h)}catch(_){}document.documentElement.classList.remove("locked");}
 else{document.getElementById("gerr").textContent="코드가 맞지 않습니다. 다시 확인해 주십시오.";}return false;}</script>
 <header class="top"><div class="wrap"><a class="brand" href="../">피지컬AI <span>실습실</span><small>로봇팔(라쿤봇)</small></a><nav class="nav"><a href="index.html">교시별 진행</a><a href="deck.html" target=_blank>교안 ↗</a><a href="tools.html">실습 도구</a><a href="codes.html">엔트리 코드</a><a href="setup.html" class=on>준비·연결</a><a href="ref.html">참고 자료</a><a class="pad" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener">참여판 ↗</a></nav></div></header>
 <div class="wrap head"><p class="kick">SETUP</p><h1>준비 · 연결</h1><p class="lead">실습 전에 한 번 확인하고, 실습 중에 필요한 값을 여기서 복사합니다.</p></div>

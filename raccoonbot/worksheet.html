@@ -8,7 +8,7 @@
 #gate input{width:100%;font:inherit;font-size:28px;font-weight:800;letter-spacing:.4em;text-align:center;padding:10px 8px 10px 20px;border:2px solid #e2ded2;border-radius:14px;outline:none}
 #gate input:focus{border-color:#1fa463}#gate button{margin-top:12px;width:100%;font:inherit;font-size:16px;font-weight:800;color:#fff;background:#1fa463;border:0;border-radius:12px;padding:11px;cursor:pointer}
 #gate .err{color:#b42318;font-size:14px;min-height:20px;margin:8px 0 0}#gate details{margin-top:14px;font-size:13px;color:#9b978c}#gate summary{cursor:pointer}#gate a{color:#17834f;font-size:13.5px}</style>
-<script>(function(){var H="45bc8c619de4f73f6fb8dbc68b7c8cac2ae1945b3dc48305eb1b305d3424f022";try{if(localStorage.getItem("lab-pass-raccoonbot")===H)return;}catch(e){}document.documentElement.classList.add("locked");})();</script>
+<script>(function(){var H="27d50c1d2060966104629e5f81dc731635f45761467989a50eb469c701528b0d";try{if(localStorage.getItem("lab-pass-raccoonbot")===H)return;}catch(e){}document.documentElement.classList.add("locked");})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>로봇팔 활동지</title>
@@ -64,7 +64,7 @@ tr.y td,tr.y th{background:var(--yel)}
 <script>async function labGate(e){e.preventDefault();var v=document.getElementById("gcode").value.trim();
 var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("physai-lab:raccoonbot:"+v));
 var h=[...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,"0")}).join("");
-if(h==="45bc8c619de4f73f6fb8dbc68b7c8cac2ae1945b3dc48305eb1b305d3424f022"){try{localStorage.setItem("lab-pass-raccoonbot",h)}catch(_){}document.documentElement.classList.remove("locked");}
+if(h==="27d50c1d2060966104629e5f81dc731635f45761467989a50eb469c701528b0d"){try{localStorage.setItem("lab-pass-raccoonbot",h)}catch(_){}document.documentElement.classList.remove("locked");}
 else{document.getElementById("gerr").textContent="코드가 맞지 않습니다. 다시 확인해 주십시오.";}return false;}</script>
 <div class="bar">피지컬AI 실습 · 로봇팔(라쿤봇) 활동지 1~10 + 반납 체크리스트 <button onclick="print()">인쇄 / PDF 저장</button></div>
 
