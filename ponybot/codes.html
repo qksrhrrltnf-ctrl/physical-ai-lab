@@ -19,7 +19,7 @@ var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("physai-lab:
 var h=[...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,"0")}).join("");
 if(h==="1f001ae86f19ae1b3bd6696d1b30eab9d4c00fd0502f72a317f9a6f96c55167e"){try{localStorage.setItem("lab-pass-ponybot",h)}catch(_){}document.documentElement.classList.remove("locked");}
 else{document.getElementById("gerr").textContent="코드가 맞지 않습니다. 다시 확인해 주십시오.";}return false;}</script>
-<header class="top"><div class="wrap"><a class="brand" href="../">피지컬AI <span>실습실</span><small>자율주행(포니봇)</small></a><nav class="nav"><a href="index.html">교시별 진행</a><a href="deck.html" target=_blank>교안 ↗</a><a href="tools.html">실습 도구</a><a href="codes.html" class=on>MakeCode 코드</a><a href="setup.html">준비·연결</a><a href="ref.html">참고 자료</a></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="../">피지컬AI <span>실습실</span><small>자율주행(포니봇)</small></a><nav class="nav"><a href="index.html">교시별 진행</a><a href="deck.html" target=_blank>교안 ↗</a><a href="tools.html">실습 도구</a><a href="codes.html" class=on>MakeCode 코드</a><a href="setup.html">준비·연결</a><a href="ref.html">참고 자료</a><a href="teacher.html" target=_blank>🔒 강사용 ↗</a></nav></div></header>
 <div class="wrap head"><p class="kick">CODES</p><h1>MakeCode 코드 모음</h1>
 <p class="lead">교시별 코드 27개입니다. 블록을 처음부터 조립하지 않고 열어서 고쳐 씁니다.</p></div>
 <main class="wrap"><div class="box" style="background:var(--gs);border-color:#9fd8b9"><p style="margin:0 0 4px"><b>여는 법</b> · .hex 내려받기 → 포니봇 전용 MakeCode 편집기 화면에 끌어 놓으면 블록으로 열립니다. 「MakeCode에서 열기」는 바로 편집기로 갑니다.</p><p style="margin:0"><b>내려보내기</b> · USB로 마이크로비트를 연결하고 [다운로드] → 포니봇 전원을 켭니다.</p></div>
