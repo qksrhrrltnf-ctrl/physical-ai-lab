@@ -10,12 +10,15 @@
 <div class="dbar"><button class="on" data-cls="0"><i style="background:#1fa463"></i>정상</button><button data-cls="1"><i style="background:#e8590c"></i>불량</button>
 <button id="dex">예시 데이터</button><button id="dclear">지우기</button><span class="dstat" id="dstat"></span></div>
 <p class="dnote">테두리가 검은 점은 신경망이 아직 틀리는 점입니다. 더 해 보기 → <a href="nn-car/">자율주행 신경망 학습시키기</a></p></div></div>
-<div class="courses"><a class="course" href="raccoonbot/"><div class="shot"><img src="assets/thumbs/course_raccoonbot.jpg" alt="로봇팔(라쿤봇)"></div><div class="bd"><span class="chip cat" style="--c:#2f6bd6">과정</span>
+<div class="courses"><a class="course" href="raccoonbot/" data-gate-course="raccoonbot"><div class="shot"><img src="assets/thumbs/course_raccoonbot.jpg" alt="로봇팔(라쿤봇)"></div><div class="bd"><span class="chip cat" style="--c:#2f6bd6">과정</span>
 <h2>로봇팔(라쿤봇) 실습 →</h2><p>교안 슬라이드와 교시별 흐름 · 실습 도구 · 엔트리 코드를 한곳에서 봅니다.</p>
-<div class="meta"><span class="chip lv core">🔒 입장 코드</span><span class="chip need">8교시</span><span class="chip need">도구 16</span><span class="chip need">코드 15</span></div></div></a><a class="course" href="ponybot/"><div class="shot"><img src="assets/thumbs/course_ponybot.jpg" alt="자율주행(포니봇)"></div><div class="bd"><span class="chip cat" style="--c:#2f6bd6">과정</span>
+<div class="meta"><span class="chip lv core">🔒 입장 코드</span><span class="chip need">8교시</span><span class="chip need">도구 16</span><span class="chip need">코드 15</span></div></div></a><a class="course" href="ponybot/" data-gate-course="ponybot"><div class="shot"><img src="assets/thumbs/course_ponybot.jpg" alt="자율주행(포니봇)"></div><div class="bd"><span class="chip cat" style="--c:#2f6bd6">과정</span>
 <h2>자율주행(포니봇) 실습 →</h2><p>교안 슬라이드와 교시별 흐름 · 실습 도구 · MakeCode 코드를 한곳에서 봅니다.</p>
 <div class="meta"><span class="chip lv core">🔒 입장 코드</span><span class="chip need">8교시</span><span class="chip need">도구 15</span><span class="chip need">코드 20</span></div></div></a><a class="course" href="nn-car/"><div class="shot"><img src="assets/thumbs/course_nncar.jpg" alt="자율주행 신경망 화면"></div>
 <div class="bd"><span class="chip cat" style="--c:#1fa463">직접 학습 · 공용</span><h2>자율주행 신경망 학습시키기 →</h2><p>같은 신경망을 지도 · 모방 · 강화학습으로 가르쳐 봅니다. 입장 코드 없이 열립니다.</p></div></a></div></div><script>
+document.querySelectorAll('a[data-gate-course]').forEach(a => a.addEventListener('click', () => {
+  try { localStorage.removeItem('lab-pass-' + a.dataset.gateCourse); } catch (_) {}
+}));
 (() => {
   // 30초 체험: 점을 찍어 가르치면 작은 신경망(2-8-1)이 실시간으로 학습해 경계를 그린다
   const box = document.getElementById('dcv'), cv = box.querySelector('canvas'), ctx = cv.getContext('2d'), hint = box.querySelector('.hint');
