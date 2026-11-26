@@ -189,7 +189,7 @@ a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
  * 원리
  *  - 배포본 codes/ 에는 평문 .sb3가 없고, 코드마다 다른 열쇠로 암호화한 .sb3.enc만 있다(AES-GCM, 열쇠 = PBKDF2(그 코드의 여섯 자리 현장 코드)).
  *  - 코드 ID는 파일 이름 앞부분: 「3차시-00a_….sb3」 → 3-00a. 한 코드를 열어도 다른 코드는 풀리지 않는다.
- *  - 관리(강사용 덱의 「코드 관리」 또는 로컬 admin.html)가 코드를 열면 저장소 gate/raccoonbot.json 의 open에 그 코드의 현장 코드를 적는다 → Pages 반영 30초쯤.
+ *  - 관리(강사용 덱의 「코드 관리」 또는 로컬 admin.html)가 코드를 열면 저장소 gate/raccoonbot.json 의 open에 그 코드의 현장 코드를 적는다 → 저장소 원본(raw)을 읽으므로 10~40초(막히면 Pages 사본, 1~5분).
  *  - 이 스크립트는 그 JSON을 30초마다 읽어 열린 코드의 단추를 켜고, 누르면 .enc를 받아 브라우저에서 풀어 .sb3로 저장한다.
  *  - 잠긴 단추는 회색 + 「강사가 열면 받을 수 있어요」. 누르면 강사가 불러 준 현장 코드를 넣는 작은 창이 뜬다.
  *  - 강사용 덱은 CODE_GATE.codes(모든 현장 코드)를 받아 항상 열림. CODE_GATE.admin이면 단추마다 「연수생: 열림/잠김」 스위치를 붙인다.
@@ -200,6 +200,8 @@ a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
   var CFG = window.CODE_GATE || {};
   var SLUG = CFG.slug || 'raccoonbot';
   var STATE_URL = CFG.stateUrl || '../gate/' + SLUG + '.json';
+  // 저장소 원본(raw)을 먼저 읽는다: 관리가 커밋하면 바로 바뀜(Pages 다시 만들기 1~5분을 기다리지 않음). 막히면 Pages 사본.
+  var RAW_URL = CFG.rawUrl || 'https://raw.githubusercontent.com/qksrhrrltnf-ctrl/physical-ai-lab/main/gate/' + SLUG + '.json';
   var ITER = 600000, POLL = 30000;
   var SEL = 'a.code-get, a.dl[href*=".sb3"]';
   var LS = 'cg-' + SLUG + '-';
@@ -258,7 +260,8 @@ a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
     });
   }
   function poll() {
-    return fetch(STATE_URL + '?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    function get(u) { return fetch(u + '?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+    return get(RAW_URL).catch(function () { return get(STATE_URL); })
       .then(function (j) { server = (j && j.open) || {}; save(LS + 'last', server); }, function () { server = read(LS + 'last') || {}; })
       .then(paint);
   }
