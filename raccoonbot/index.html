@@ -24,7 +24,7 @@ else{document.getElementById("gerr").textContent="코드가 맞지 않습니다.
 <p class="lead">차시 순서대로 따라갑니다. 차시마다 <b>흐름</b> · <b>실습 도구</b> · <b>스크래치 코드</b> · <b>패들렛 칸</b>이 한곳에 있습니다. 덱 장 번호를 함께 적었습니다. 교안 슬라이드는 위쪽 「교안」에서 엽니다.</p></div>
 <nav class="ptabs"><div class="wrap"><a href="#p1" data-p="1"><b>1</b>로봇팔의 이해</a><a href="#p2" data-p="2"><b>2</b>버튼으로 가르치기 · 율동과 군무</a><a href="#p3" data-p="3"><b>3</b>연결하고, 각도와 코드로 자세 만들기</a><a href="#p4" data-p="4"><b>4</b>좌표로 집어 옮기고, 세 방식 견주기</a><a href="#p5" data-p="5"><b>5</b>연속동작 만들기</a><a href="#p6" data-p="6"><b>6</b>인공신경망 학습</a><a href="#p7" data-p="7"><b>7</b>학습 결과 개선</a><a href="#p8" data-p="8"><b>8</b>학습 로봇 미션 및 나눔</a></div></nav><main class="wrap"><section class="period" id="p1"><div class="ph"><div class="pn">1<small>차시</small></div>
 <div><h2>로봇팔의 이해</h2><p class="sub">AI, 규칙 기반 자동화, 피지컬AI 그리고 로봇팔</p><p class="q">규칙을 사람이 적지 않는다면, 판단은 누가 내리는가?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>시작하기 전에 · 질문 셋 · 하루 흐름<span>덱 2–4</span></li><li>AI 70년: 규칙 · 학습 · 생성 · 행동<span>덱 6–13</span></li><li>이미지넷 · GPU · 쓴맛의 교훈<span>덱 14–16</span></li><li>규칙 vs 학습된 모델 · 자동화인가, 피지컬AI인가<span>덱 17–19</span></li><li>우리 삶 속 피지컬AI와 틀린 AI<span>덱 20–24</span></li><li>로봇 65년 · 움직이는 네 가지 방법 · 휴머노이드<span>덱 25–31</span></li><li>왜 몸인가<span>덱 32–33</span></li><li>로봇팔 구조 · 가동 범위 · 전원 · 안전<span>덱 34–40</span></li><li>학교 현장과 교사의 역할<span>덱 41–44</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>시작하기 전에 · 질문 셋 · 하루 흐름<span>덱 3–5</span></li><li>AI 70년: 규칙 · 학습 · 생성 · 행동<span>덱 7–14</span></li><li>이미지넷 · GPU · 쓴맛의 교훈<span>덱 15–17</span></li><li>규칙 vs 학습된 모델 · 자동화인가, 피지컬AI인가<span>덱 18–20</span></li><li>우리 삶 속 피지컬AI와 틀린 AI<span>덱 21–25</span></li><li>로봇 65년 · 움직이는 네 가지 방법 · 휴머노이드<span>덱 26–32</span></li><li>왜 몸인가<span>덱 33–34</span></li><li>로봇팔 구조 · 가동 범위 · 전원 · 안전<span>덱 35–41</span></li><li>학교 현장과 교사의 역할<span>덱 42–45</span></li></ol></div>
 <div class="side"><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>①</b><span>패들렛 ①번 칸<small>학교급 · 장비 · 가져갈 것 · 올리기 ↗</small></span></a><div class="tip">체험 도구는 첫 실행 때 내려받는 양이 많아 강사 시연 위주로 봅니다. 끝에서 라쿤봇을 처음 만질 때는 POWER 한 번으로 HOME 자세를 만들고, 범위 끝에서 더 밀지 않습니다.</div></div></div>
 <p class="sublbl">실습 도구 · 눌러서 엽니다</p><div class="tools"><article class="tool" data-cat="idea" id="t-transformer" style="--c:#2f6bd6">
 <div class="shot"><img src="../assets/thumbs/raccoonbot_tool_transformer.jpg" alt="Transformer Explainer 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
@@ -42,13 +42,13 @@ else{document.getElementById("gerr").textContent="코드가 맞지 않습니다.
 
 </section><section class="period" id="p2"><div class="ph"><div class="pn">2<small>차시</small></div>
 <div><h2>버튼으로 가르치기 · 율동과 군무</h2><p class="sub">PC 없이 버튼만으로 로봇 제어</p><p class="q">버튼으로 가르친 춤을 다른 로봇에 옮기려면 무엇이 필요할까?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>기본 조작 · 전원 · HOME · 버튼<span>덱 47</span></li><li>손 티칭 &amp; 플레이백 · 블록을 A에서 B로<span>덱 48–49</span></li><li>개인 율동 · 음악 30초<span>덱 50</span></li><li>모둠 군무 · 발표<span>덱 51–52</span></li><li>묻기 · 몇 자세로 맞췄나? 옆 로봇에 옮기려면?<span>덱 53</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>기본 조작 · 전원 · HOME · 버튼<span>덱 48</span></li><li>손 티칭 &amp; 플레이백 · 블록을 A에서 B로<span>덱 49–52</span></li><li>개인 율동 · 음악 30초<span>덱 53</span></li><li>모둠 군무 · 발표<span>덱 54–55</span></li><li>묻기 · 몇 자세로 맞췄나? 옆 로봇에 옮기려면?<span>덱 56</span></li></ol></div>
 <div class="side"><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>②</b><span>패들렛 ②번 칸<small>최소 자세 · 헷갈린 관절 · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>③</b><span>패들렛 ③번 칸<small>모둠 군무 · 올리기 ↗</small></span></a><div class="tip">TEACH 클릭 = 자세 저장 · 더블클릭 = 저장 + 집게 열기/닫기 · 길게 = 누른 만큼 대기. 틀린 자세는 DELETE 클릭 후 다시 PLAY.</div></div></div>
 
 
 </section><section class="period" id="p3"><div class="ph"><div class="pn">3<small>차시</small></div>
 <div><h2>연결하고, 각도와 코드로 자세 만들기</h2><p class="sub">로봇팔 제어 체험 · 다양한 방식으로 로봇팔 제어하기</p><p class="q">손 티칭 · 관절 각도 · XYZ 좌표, 무엇이 다른가?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>로봇 코딩 2.2.1 설치 · 연결 · 스크래치 열기<span>덱 56–57</span></li><li>첫 코드: 소리 · 관절 속도 · 로봇 버튼 · 세 자세<span>덱 58–64</span></li><li>묻기 · 연결에서 어디가 막혔나요?<span>덱 65</span></li><li>세 가지 방식 · 관절 각도의 기준과 방향<span>덱 66–67</span></li><li>(선택) 손으로 돌리며 각도 읽기 · 내 자세 만들기<span>덱 68–69</span></li><li>모방학습 · ALOHA · 시범 데이터<span>덱 70–72</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>로봇 코딩 2.2.1 설치 · 연결 · 스크래치 열기<span>덱 59–60</span></li><li>스크래치 기초 · 화면 · 블록 · 순서 · 반복 · 저장 · 고양이 코드를 라쿤봇 코드로<span>덱 61–70</span></li><li>첫 코드: 소리 · 관절 속도 · 로봇 버튼 · 세 자세<span>덱 71–78</span></li><li>묻기 · 연결에서 어디가 막혔나요?<span>덱 79</span></li><li>세 가지 방식 · 관절 각도의 기준과 방향<span>덱 80–81</span></li><li>(선택) 손으로 돌리며 각도 읽기 · 내 자세 만들기<span>덱 82–83</span></li><li>모방학습 · ALOHA · 시범 데이터<span>덱 84–86</span></li></ol></div>
 <div class="side"><div class="tip">로봇 코딩은 2.2.1이어야 교안 블록과 똑같이 보입니다. 버전은 창 제목 표시줄에서 보고, 스피커 아이콘을 눌러 내 라쿤봇이 「삐」 하는지 확인합니다.</div></div></div>
 <p class="sublbl">실습 도구 · 눌러서 엽니다</p><div class="tools"><article class="tool" data-cat="work" id="t-robotcoding" style="--c:#5b6472">
 <div class="shot"><img src="../assets/thumbs/raccoonbot_tool_robotcoding.jpg" alt="로봇 코딩 2.2.1 (스크래치 포함) 화면" loading="lazy"><span class="chip cat">작업 도구</span></div>
@@ -63,50 +63,53 @@ else{document.getElementById("gerr").textContent="코드가 맞지 않습니다.
 <div class="bd"><div class="tags"><span class="chip lv">선택</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span></div><h3>모방학습 시범 데이터 보기 (LeRobot)</h3><p class="what">실제 로봇 시범 한 편의 카메라 영상과 관절 값 그래프를 함께 재생합니다.</p>
 <p class="try"><b>해 볼 것</b> · 예시 데이터셋을 하나 고르고, 영상이 움직일 때 관절 그래프가 어떻게 변하는지 봅니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
 <div class="ft"><span></span><a class="open" href="https://huggingface.co/spaces/lerobot/visualize_dataset" target="_blank" rel="noopener">열기 ↗</a></div></div></article></div>
-<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_1_2_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_1.jpg" alt="도레미파솔 소리 내기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 82장</span><p class="t">도레미파솔 소리 내기</p><p class="d">깃발 아래 「음을 박자 연주하기」 5개를 도 · 레 · 미 · 파 · 솔로. 소리는 PC가 아니라 로봇에서 납니다</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-1-2-1.sb3" download="S-1-2-1.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_2.jpg" alt="1번 관절을 속도로 돌리기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 83장</span><p class="t">1번 관절을 속도로 돌리기</p><p class="d">「1번째 관절 속도를 50 %로 정하기」 → 2초 → 기본 자세. 50을 −50, 100으로 바꿔 다시. 속도는 −100 ~ 100</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-1-2-2.sb3" download="S-1-2-2.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_3.jpg" alt="(선택) 1~4번 관절 차례로 돌리기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 84장</span><p class="t">(선택) 1~4번 관절 차례로 돌리기</p><p class="d">관절마다 속도 50 → 2초 → 속도 0. 끝에 네 관절 모두 −50 → 2초 → 0. 0 %로 정해야 멈춥니다</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-1-2-3.sb3" download="S-1-2-3.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_4"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_4.jpg" alt="(선택) 관절을 돌리며 소리 내기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 85장</span><p class="t">(선택) 관절을 돌리며 소리 내기</p><p class="d">속도 블록 아래 「소리 1번 재생하기」, 관절마다 다른 소리. 끝은 기본 자세 + 「잘 했어요」</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-1-2-4.sb3" download="S-1-2-4.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_5.jpg" alt="로봇 버튼으로 움직이기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 86장</span><p class="t">로봇 버튼으로 움직이기</p><p class="d">무한 반복 안 「만약 … 아니면」: 재생 → 1번 관절 100, 삭제 → −100, 티치 → 기본 자세, 아니면 모두 정지</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-1-2-5.sb3" download="S-1-2-5.sb3">내려받기</a></div></div><div class="code" id="c-S_1_3_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_3_1.jpg" alt="제로 · 파크 · 홈 자세 만들기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 87장</span><p class="t">제로 · 파크 · 홈 자세 만들기</p><p class="d">관절 각도 블록 3개. 제로 0 · 0 · 0 · 0 / 파크 0 · 25 · −145 · −60 / 홈 0 · −10 · −140 · 60</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-1-3-1.sb3" download="S-1-3-1.sb3">내려받기</a></div></div><div class="code" id="c-S_1_3_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_3_2.jpg" alt="(선택) 세 자세를 3번 반복하기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 88장</span><p class="t">(선택) 세 자세를 3번 반복하기</p><p class="d">「3번 반복하기」 안에 세 자세 「정하기」 + 5초 기다리기. 반복이 끝나면 「잘 했어요」</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-1-3-2.sb3" download="S-1-3-2.sb3">내려받기</a></div></div><div class="code" id="c-S_2_1_4"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_1_4.jpg" alt="(선택) 관절 전원을 끄고 손으로 돌리며 각도 읽기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 93장</span><p class="t">(선택) 관절 전원을 끄고 손으로 돌리며 각도 읽기</p><p class="d">깃발 = 모든 관절 전원 끄기. 1번 관절을 손으로 천천히 돌리며 고양이가 말하는 각도를 읽습니다</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-2-1-4.sb3" download="S-2-1-4.sb3">내려받기</a></div></div><div class="code" id="c-S_2_2_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_2_5.jpg" alt="네 관절을 한 번에, 내 자세 세 개 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 94장</span><p class="t">네 관절을 한 번에, 내 자세 세 개</p><p class="d">1:45 · 2:0 · 3:−90 · 4:0 한 번에 실행. 손으로 잡은 자세 셋을 「삐」로 잇고 기본 자세 → 「잘 했어요」</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-2-2-5.sb3" download="S-2-2-5.sb3">내려받기</a></div></div><div class="code" id="c-S_2_2_8_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_2_8_3.jpg" alt="손 티칭을 코드로 · 스페이스로 자세 기록 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 95장</span><p class="t">손 티칭을 코드로 · 스페이스로 자세 기록</p><p class="d">변수 「번호」, 리스트 「기록」. 팔을 손으로 옮기고 스페이스 = 관절 각도 4개를 기록에 추가</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-2-2-8-3.sb3" download="S-2-2-8-3.sb3">내려받기</a></div></div><div class="code" id="c-S_2_2_8_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_2_8_5.jpg" alt="손 티칭을 코드로 · P로 재생, C로 지우기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 96장</span><p class="t">손 티칭을 코드로 · P로 재생, C로 지우기</p><p class="d">P = 기록을 네 칸씩 읽어 자세 재생(자세마다 「삐」, 끝에 「잘 했어요」). C = 기록 모두 삭제</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-2-2-8-5.sb3" download="S-2-2-8-5.sb3">내려받기</a></div></div></div>
+<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-C_3_00a"><div class="cimg none">코드</div><div><span class="sl">3차시 · 덱 65장</span><p class="t">스크래치 기초 ④ 순서대로 · 움직이고 기다리기</p><p class="d">덱 65장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-00a_고양이_순서대로.sb3" download="3차시-00a_고양이_순서대로.sb3">내려받기</a></div></div><div class="code" id="c-C_3_00b"><div class="cimg none">코드</div><div><span class="sl">3차시 · 덱 67장</span><p class="t">스크래치 기초 ⑥ 반복하기 · 10번 반복과 무한 반복</p><p class="d">덱 67장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-00b_고양이_반복하기.sb3" download="3차시-00b_고양이_반복하기.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_1.jpg" alt="도레미파솔 소리 내기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 71장</span><p class="t">도레미파솔 소리 내기</p><p class="d">깃발 아래 「음을 박자 연주하기」 5개를 도 · 레 · 미 · 파 · 솔로. 소리는 PC가 아니라 로봇에서 납니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-01_도레미파솔.sb3" download="3차시-01_도레미파솔.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_2.jpg" alt="1번 관절을 속도로 돌리기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 72장</span><p class="t">1번 관절을 속도로 돌리기</p><p class="d">「1번째 관절 속도를 50 %로 정하기」 → 2초 → 기본 자세. 50을 −50, 100으로 바꿔 다시. 속도는 −100 ~ 100</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-02_1번관절_속도로돌리기.sb3" download="3차시-02_1번관절_속도로돌리기.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_3.jpg" alt="(선택) 1~4번 관절 차례로 돌리기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 73장</span><p class="t">(선택) 1~4번 관절 차례로 돌리기</p><p class="d">관절마다 속도 50 → 2초 → 속도 0. 끝에 네 관절 모두 −50 → 2초 → 0. 0 %로 정해야 멈춥니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-03_관절차례로돌리기_선택.sb3" download="3차시-03_관절차례로돌리기_선택.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_4"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_4.jpg" alt="(선택) 관절을 돌리며 소리 내기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 74장</span><p class="t">(선택) 관절을 돌리며 소리 내기</p><p class="d">속도 블록 아래 「소리 1번 재생하기」, 관절마다 다른 소리. 끝은 기본 자세 + 「잘 했어요」</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-04_관절돌리며소리내기_선택.sb3" download="3차시-04_관절돌리며소리내기_선택.sb3">내려받기</a></div></div><div class="code" id="c-S_1_2_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_2_5.jpg" alt="로봇 버튼으로 움직이기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 76장</span><p class="t">로봇 버튼으로 움직이기</p><p class="d">무한 반복 안 「만약 … 아니면」: 재생 → 1번 관절 100, 삭제 → −100, 티치 → 기본 자세, 아니면 모두 정지</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-05_로봇버튼으로움직이기.sb3" download="3차시-05_로봇버튼으로움직이기.sb3">내려받기</a></div></div><div class="code" id="c-S_1_3_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_3_1.jpg" alt="제로 · 파크 · 홈 자세 만들기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 77장</span><p class="t">제로 · 파크 · 홈 자세 만들기</p><p class="d">관절 각도 블록 3개. 제로 0 · 0 · 0 · 0 / 파크 0 · 25 · −145 · −60 / 홈 0 · −10 · −140 · 60</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-06_제로파크홈자세.sb3" download="3차시-06_제로파크홈자세.sb3">내려받기</a></div></div><div class="code" id="c-S_1_3_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_1_3_2.jpg" alt="(선택) 세 자세를 3번 반복하기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 78장</span><p class="t">(선택) 세 자세를 3번 반복하기</p><p class="d">「3번 반복하기」 안에 세 자세 「정하기」 + 5초 기다리기. 반복이 끝나면 「잘 했어요」</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-07_세자세3번반복_선택.sb3" download="3차시-07_세자세3번반복_선택.sb3">내려받기</a></div></div><div class="code" id="c-S_2_1_4"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_1_4.jpg" alt="(선택) 관절 전원을 끄고 손으로 돌리며 각도 읽기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 82장</span><p class="t">(선택) 관절 전원을 끄고 손으로 돌리며 각도 읽기</p><p class="d">깃발 = 모든 관절 전원 끄기. 1번 관절을 손으로 천천히 돌리며 고양이가 말하는 각도를 읽습니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-08_손으로돌리며각도읽기_선택.sb3" download="3차시-08_손으로돌리며각도읽기_선택.sb3">내려받기</a></div></div><div class="code" id="c-S_2_2_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_2_5.jpg" alt="네 관절을 한 번에, 내 자세 세 개 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 83장</span><p class="t">네 관절을 한 번에, 내 자세 세 개</p><p class="d">1:45 · 2:0 · 3:−90 · 4:0 한 번에 실행. 손으로 잡은 자세 셋을 「삐」로 잇고 기본 자세 → 「잘 했어요」</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-09_네관절로내자세만들기.sb3" download="3차시-09_네관절로내자세만들기.sb3">내려받기</a></div></div><div class="code" id="c-S_2_2_8_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_2_8_3.jpg" alt="손 티칭을 코드로 · 스페이스로 자세 기록 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 80장</span><p class="t">손 티칭을 코드로 · 스페이스로 자세 기록</p><p class="d">변수 「번호」, 리스트 「기록」. 팔을 손으로 옮기고 스페이스 = 관절 각도 4개를 기록에 추가</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-10_손티칭코드_자세기록_실습실.sb3" download="3차시-10_손티칭코드_자세기록_실습실.sb3">내려받기</a></div></div><div class="code" id="c-S_2_2_8_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_2_8_5.jpg" alt="손 티칭을 코드로 · P로 재생, C로 지우기 블록 모양" loading="lazy"><div><span class="sl">3차시 · 덱 80장</span><p class="t">손 티칭을 코드로 · P로 재생, C로 지우기</p><p class="d">P = 기록을 네 칸씩 읽어 자세 재생(자세마다 「삐」, 끝에 「잘 했어요」). C = 기록 모두 삭제</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/3차시-11_손티칭코드_재생지우기_실습실.sb3" download="3차시-11_손티칭코드_재생지우기_실습실.sb3">내려받기</a></div></div></div>
 </section><section class="period" id="p4"><div class="ph"><div class="pn">4<small>차시</small></div>
 <div><h2>좌표로 집어 옮기고, 세 방식 견주기</h2><p class="sub">제어 방식 비교 미션</p><p class="q">같은 원기둥을 세 가지 방식으로 옮기면 무엇이 다른가?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>좌표계 · X 오른쪽, Y 앞, Z 위<span>덱 75</span></li><li>(선택) 정기구학 퍼즐 · 손으로 좌표 찾기<span>덱 76–77</span></li><li>그리퍼 기준으로 가고 좌표표 만들기<span>덱 78</span></li><li>묻기 · 컵을 잡을 때 각도를 생각하나요?<span>덱 79</span></li><li>같은 원기둥을 세 가지 방식으로: 그리퍼 · 집기 · 놓기 블록<span>덱 80–84</span></li><li>키보드로 조종 · 판단은 사람이<span>덱 85</span></li><li>(선택) sim2browser · 직접 · 공식 · 학습<span>덱 86–88</span></li><li>묻기 · 학생 첫 수업은 어느 방식?<span>덱 89</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>좌표계 · X 오른쪽, Y 앞, Z 위<span>덱 89</span></li><li>(선택) 정기구학 퍼즐 · 손으로 좌표 찾기<span>덱 90–91</span></li><li>그리퍼 기준으로 가고 좌표표 만들기<span>덱 92</span></li><li>위치 기준 · 손목과 그리퍼를 같은 좌표로 보내 비교<span>덱 93–95</span></li><li>묻기 · 컵을 잡을 때 각도를 생각하나요?<span>덱 96</span></li><li>같은 원기둥을 세 가지 방식으로: 그리퍼 · 집기 · 놓기 블록<span>덱 97–106</span></li><li>키보드로 조종 · 판단은 사람이<span>덱 107–108</span></li><li>(선택) sim2browser · 직접 · 공식 · 학습<span>덱 109–111</span></li><li>묻기 · 학생 첫 수업은 어느 방식?<span>덱 112</span></li></ol></div>
 <div class="side"><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>④</b><span>패들렛 ④번 칸<small>컵 생각(투표) · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑤</b><span>패들렛 ⑤번 칸<small>첫 수업 방식(투표) · 올리기 ↗</small></span></a><div class="tip">좌표로 옮길 때는 수평으로 가기 전에 z부터 올립니다. sim2browser는 일찍 끝난 팀이 해 보는 선택 체험입니다.</div></div></div>
 <p class="sublbl">실습 도구 · 눌러서 엽니다</p><div class="tools"><article class="tool" data-cat="robot" id="t-sim2browser" style="--c:#e07b00">
 <div class="shot"><img src="../assets/thumbs/raccoonbot_tool_sim2browser.jpg" alt="sim2browser 로봇팔 화면" loading="lazy"><span class="chip cat">로봇 시뮬레이션</span></div>
 <div class="bd"><div class="tags"><span class="chip lv">선택</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>sim2browser 로봇팔</h3><p class="what">같은 로봇팔을 직접(사람) · 공식(역기구학) · 학습(강화학습) 세 가지 머리로 움직여 비교합니다.</p>
 <p class="try"><b>해 볼 것</b> · 파란 목표를 끌고 YOU · ENGINEERED · LEARNED를 바꿔 가며 같은 자리를 다섯 번 비교합니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
 <div class="ft"><span></span><a class="open" href="https://rotvie.github.io/sim2browser/" target="_blank" rel="noopener">열기 ↗</a></div></div></article></div>
-<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_4_1_7"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_1_7.jpg" alt="그리퍼 기준으로 가고 좌표표 만들기 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 107장</span><p class="t">그리퍼 기준으로 가고 좌표표 만들기</p><p class="d">깃발 = 세 지점 차례로. 기준을 손목으로 바꿔 비교하고 검사대 · A · B 좌표를 팀 좌표표에. 수평으로 가기 전에 z부터</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-4-1-7.sb3" download="S-4-1-7.sb3">내려받기</a></div></div><div class="code" id="c-S_2_3_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_3_2.jpg" alt="그리퍼를 닫고 열기, 세 번 반복 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 110장</span><p class="t">그리퍼를 닫고 열기, 세 번 반복</p><p class="d">[집기 (닫기)] → [놓기 (열기)] 세 번, 사이마다 1초 기다리기. 기다리는 시간을 바꿔 다시</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-2-3-2.sb3" download="S-2-3-2.sb3">내려받기</a></div></div><div class="code" id="c-S_2_3_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_3_5.jpg" alt="① 손 티칭 · 기록한 자세로 원기둥 옮기기 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 111장</span><p class="t">① 손 티칭 · 기록한 자세로 원기둥 옮기기</p><p class="d">팔 옮기고 스페이스 · ← 집기 · → 놓기. O로 기본 자세, P로 재생, 실패하면 C로 지우고 다시 기록</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-2-3-5.sb3" download="S-2-3-5.sb3">내려받기</a></div></div><div class="code" id="c-S_4_2_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_2_1.jpg" alt="③ XYZ 좌표 · 「집기」 「놓기」 블록 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 112 · 133장</span><p class="t">③ XYZ 좌표 · 「집기」 「놓기」 블록</p><p class="d">나만의 블록 「집기」 「놓기」(입력값 X · Y · Z): 위로 → 내려가 잡고 → 다시 위로. 5차시 미션 ③(순서 카드대로)의 시작 코드</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-4-2-1.sb3" download="S-4-2-1.sb3">내려받기</a></div></div><div class="code" id="c-S_3_1_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_1_1.jpg" alt="(선택) 그리퍼를 수평으로 고정하고 움직이기 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 113장</span><p class="t">(선택) 그리퍼를 수평으로 고정하고 움직이기</p><p class="d">깃발 → 팔이 움직이는 동안 그리퍼 보기. 관절 4 속도를 30으로 바꿔 다시. 고정하면 관절 4는 마음대로 안 됩니다</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-3-1-1.sb3" download="S-3-1-1.sb3">내려받기</a></div></div><div class="code" id="c-S_4_2_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_2_3.jpg" alt="원기둥 네 개를 목표 지점으로 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 114장</span><p class="t">원기둥 네 개를 목표 지점으로</p><p class="d">원기둥 4개를 시작 지점에 놓고 깃발. 놓친 원기둥은 그 줄 좌표만 고칩니다. 그리퍼는 수평 고정</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-4-2-3.sb3" download="S-4-2-3.sb3">내려받기</a></div></div><div class="code" id="c-S_2_3_6"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_3_6.jpg" alt="키보드로 조종 · 판단은 사람이 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 115장</span><p class="t">키보드로 조종 · 판단은 사람이</p><p class="d">숫자 키(1~4) + W = 속도 40, + S = −40. ↑ 놓기(열기) · ↓ 집기(닫기). 원기둥을 A로 옮기고 시간 기록</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-2-3-6.sb3" download="S-2-3-6.sb3">내려받기</a></div></div></div>
+<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_4_1_7"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_1_7.jpg" alt="그리퍼 기준으로 가고 좌표표 만들기 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 92장</span><p class="t">그리퍼 기준으로 가고 좌표표 만들기</p><p class="d">깃발 = 세 지점 차례로. 기준을 손목으로 바꿔 비교하고 검사대 · A · B 좌표를 팀 좌표표에. 수평으로 가기 전에 z부터</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-01_그리퍼기준_좌표표.sb3" download="4차시-01_그리퍼기준_좌표표.sb3">내려받기</a></div></div><div class="code" id="c-C_4_01b"><div class="cimg none">코드</div><div><span class="sl">4차시 · 덱 94장</span><p class="t">같은 좌표를 두 기준으로 보내 비교하기</p><p class="d">덱 94장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-01b_손목그리퍼기준비교.sb3" download="4차시-01b_손목그리퍼기준비교.sb3">내려받기</a></div></div><div class="code" id="c-S_2_3_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_3_2.jpg" alt="그리퍼를 닫고 열기, 세 번 반복 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 98장</span><p class="t">그리퍼를 닫고 열기, 세 번 반복</p><p class="d">[집기 (닫기)] → [놓기 (열기)] 세 번, 사이마다 1초 기다리기. 기다리는 시간을 바꿔 다시</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-02_그리퍼닫고열기3번.sb3" download="4차시-02_그리퍼닫고열기3번.sb3">내려받기</a></div></div><div class="code" id="c-S_4_2_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_2_1.jpg" alt="③ XYZ 좌표 · 「집기」 「놓기」 블록 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 101 · 125장</span><p class="t">③ XYZ 좌표 · 「집기」 「놓기」 블록</p><p class="d">나만의 블록 「집기」 「놓기」(입력값 X · Y · Z): 위로 → 내려가 잡고 → 다시 위로. 5차시 미션 ③(순서 카드대로)의 시작 코드</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-03_집기놓기블록만들기.sb3" download="4차시-03_집기놓기블록만들기.sb3">내려받기</a></div></div><div class="code" id="c-S_3_1_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_1_1.jpg" alt="(선택) 그리퍼를 수평으로 고정하고 움직이기 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 104장</span><p class="t">(선택) 그리퍼를 수평으로 고정하고 움직이기</p><p class="d">깃발 → 팔이 움직이는 동안 그리퍼 보기. 관절 4 속도를 30으로 바꿔 다시. 고정하면 관절 4는 마음대로 안 됩니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-04_그리퍼수평고정_선택.sb3" download="4차시-04_그리퍼수평고정_선택.sb3">내려받기</a></div></div><div class="code" id="c-S_4_2_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_2_3.jpg" alt="원기둥 네 개를 목표 지점으로 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 106장</span><p class="t">원기둥 네 개를 목표 지점으로</p><p class="d">원기둥 4개를 시작 지점에 놓고 깃발. 놓친 원기둥은 그 줄 좌표만 고칩니다. 그리퍼는 수평 고정</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-05_원기둥네개옮기기.sb3" download="4차시-05_원기둥네개옮기기.sb3">내려받기</a></div></div><div class="code" id="c-S_2_3_6"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_3_6.jpg" alt="키보드로 조종 · 판단은 사람이 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 107 · 108장</span><p class="t">키보드로 조종 · 판단은 사람이</p><p class="d">숫자 키(1~4) + W = 속도 40, + S = −40. ↑ 놓기(열기) · ↓ 집기(닫기). 원기둥을 A로 옮기고 시간 기록</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-06_키보드로조종.sb3" download="4차시-06_키보드로조종.sb3">내려받기</a></div></div><div class="code" id="c-S_2_3_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_2_3_5.jpg" alt="① 손 티칭 · 기록한 자세로 원기둥 옮기기 블록 모양" loading="lazy"><div><span class="sl">4차시 · 덱 97장</span><p class="t">① 손 티칭 · 기록한 자세로 원기둥 옮기기</p><p class="d">팔 옮기고 스페이스 · ← 집기 · → 놓기. O로 기본 자세, P로 재생, 실패하면 C로 지우고 다시 기록</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/4차시-07_손티칭으로원기둥옮기기_실습실.sb3" download="4차시-07_손티칭으로원기둥옮기기_실습실.sb3">내려받기</a></div></div></div>
 </section><section class="period" id="p5"><div class="ph"><div class="pn">5<small>차시</small></div>
 <div><h2>연속동작 만들기</h2><p class="sub">연속동작 설계 및 실행</p><p class="q">자세를 이어 붙이면 자동화가 될까?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>오전 정리: 판단은 아직 사람이<span>덱 90</span></li><li>자동화 라인 · 판단 없는 반복<span>덱 93</span></li><li>집기 · 놓기 반복 · 두 원기둥 자리 바꾸기<span>덱 94–97</span></li><li>원기둥 쌓기<span>덱 98–100</span></li><li>미션 ③ 순서 카드대로 · 불량 블록도 올려 본다<span>덱 101</span></li><li>(선택) 경로 · 종이컵을 건드리지 않고<span>덱 102</span></li><li>보지 않았고, 규칙이 없었다<span>덱 103</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>오전 정리: 판단은 아직 사람이<span>덱 113</span></li><li>자동화 라인 · 판단 없는 반복<span>덱 116</span></li><li>집기 · 놓기 반복 · 두 원기둥 자리 바꾸기<span>덱 117–121</span></li><li>원기둥 쌓기<span>덱 122–124</span></li><li>미션 ③ 순서 카드대로 · 불량 블록도 올려 본다<span>덱 125</span></li><li>(선택) 경로 · 종이컵을 건드리지 않고<span>덱 126</span></li><li>보지 않았고, 규칙이 없었다<span>덱 127</span></li></ol></div>
 <div class="side"><div class="tip">집기 → 올리기 → 옮기기 → 내리기 → 놓기 다섯 단계로 줄여 생각합니다. 손으로 팔을 옮기는 것은 전원을 끈 뒤에만 합니다.</div></div></div>
 
-<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_3_1_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_1_5.jpg" alt="한 자리에서 집기 · 놓기 반복하기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 127장</span><p class="t">한 자리에서 집기 · 놓기 반복하기</p><p class="d">c 키 → 손으로 그리퍼를 목표 지점에 → 관절 각도 4개 적기 → p 키. 코드에 각도를 넣고 실행, 수직 고정으로 바꿔 다시</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-3-1-5.sb3" download="S-3-1-5.sb3">내려받기</a></div></div><div class="code" id="c-S_3_3_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_3_2.jpg" alt="(선택) 원기둥을 집었다 제자리에 놓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 128장</span><p class="t">(선택) 원기둥을 집었다 제자리에 놓기</p><p class="d">활동지 C 구역에 원기둥. c 키로 위 · 집는 자세 각도를 적고 p 키로 실행. 위로 가서 내려가 집습니다</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-3-3-2.sb3" download="S-3-3-2.sb3">내려받기</a></div></div><div class="code" id="c-S_3_3_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_3_3.jpg" alt="두 원기둥 자리 바꾸기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 129장</span><p class="t">두 원기둥 자리 바꾸기</p><p class="d">A · C 구역에 원기둥, B는 비우기. A → B, C → A, B → C 순서로, 옮길 때마다 각도를 적어 코드로</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-3-3-3.sb3" download="S-3-3-3.sb3">내려받기</a></div></div><div class="code" id="c-S_3_3_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_3_5.jpg" alt="(선택) C 지점에 원기둥 쌓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 130장</span><p class="t">(선택) C 지점에 원기둥 쌓기</p><p class="d">A · B에 원기둥, C는 비우기. B → C를 먼저 내려놓고, A → C는 한 층 위에서 놓기</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-3-3-5.sb3" download="S-3-3-5.sb3">내려받기</a></div></div><div class="code" id="c-S_4_3_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_3_1.jpg" alt="한 지점에 원기둥 네 개 쌓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 131장</span><p class="t">한 지점에 원기둥 네 개 쌓기</p><p class="d">원기둥 4개를 시작 지점에 놓고 깃발. x, y는 그대로, 놓기의 z만 한 층씩 위로</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-4-3-1.sb3" download="S-4-3-1.sb3">내려받기</a></div></div><div class="code" id="c-S_4_3_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_3_3.jpg" alt="(선택) 그리퍼를 세워 피라미드 쌓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 132장</span><p class="t">(선택) 그리퍼를 세워 피라미드 쌓기</p><p class="d">그리퍼를 수직으로 고정. 시작 지점에 원기둥을 하나씩 놓아 주면 로봇이 쌓습니다</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-4-3-3.sb3" download="S-4-3-3.sb3">내려받기</a></div></div></div>
+<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_3_1_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_1_5.jpg" alt="한 자리에서 집기 · 놓기 반복하기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 119장</span><p class="t">한 자리에서 집기 · 놓기 반복하기</p><p class="d">c 키 → 손으로 그리퍼를 목표 지점에 → 관절 각도 4개 적기 → p 키. 코드에 각도를 넣고 실행, 수직 고정으로 바꿔 다시</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/5차시-01_한자리에서집기놓기.sb3" download="5차시-01_한자리에서집기놓기.sb3">내려받기</a></div></div><div class="code" id="c-S_3_3_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_3_2.jpg" alt="(선택) 원기둥을 집었다 제자리에 놓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 120장</span><p class="t">(선택) 원기둥을 집었다 제자리에 놓기</p><p class="d">활동지 C 구역에 원기둥. c 키로 위 · 집는 자세 각도를 적고 p 키로 실행. 위로 가서 내려가 집습니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/5차시-02_집었다제자리에놓기_선택.sb3" download="5차시-02_집었다제자리에놓기_선택.sb3">내려받기</a></div></div><div class="code" id="c-S_3_3_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_3_3.jpg" alt="두 원기둥 자리 바꾸기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 121장</span><p class="t">두 원기둥 자리 바꾸기</p><p class="d">A · C 구역에 원기둥, B는 비우기. A → B, C → A, B → C 순서로, 옮길 때마다 각도를 적어 코드로</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/5차시-03_두원기둥자리바꾸기.sb3" download="5차시-03_두원기둥자리바꾸기.sb3">내려받기</a></div></div><div class="code" id="c-S_3_3_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_3_3_5.jpg" alt="(선택) C 지점에 원기둥 쌓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 122장</span><p class="t">(선택) C 지점에 원기둥 쌓기</p><p class="d">A · B에 원기둥, C는 비우기. B → C를 먼저 내려놓고, A → C는 한 층 위에서 놓기</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/5차시-04_C지점에쌓기_선택.sb3" download="5차시-04_C지점에쌓기_선택.sb3">내려받기</a></div></div><div class="code" id="c-S_4_3_1"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_3_1.jpg" alt="한 지점에 원기둥 네 개 쌓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 123장</span><p class="t">한 지점에 원기둥 네 개 쌓기</p><p class="d">원기둥 4개를 시작 지점에 놓고 깃발. x, y는 그대로, 놓기의 z만 한 층씩 위로</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/5차시-05_원기둥네개쌓기.sb3" download="5차시-05_원기둥네개쌓기.sb3">내려받기</a></div></div><div class="code" id="c-S_4_3_3"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_4_3_3.jpg" alt="(선택) 그리퍼를 세워 피라미드 쌓기 블록 모양" loading="lazy"><div><span class="sl">5차시 · 덱 124장</span><p class="t">(선택) 그리퍼를 세워 피라미드 쌓기</p><p class="d">그리퍼를 수직으로 고정. 시작 지점에 원기둥을 하나씩 놓아 주면 로봇이 쌓습니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/5차시-06_피라미드쌓기_선택.sb3" download="5차시-06_피라미드쌓기_선택.sb3">내려받기</a></div></div></div>
 </section><section class="period" id="p6"><div class="ph"><div class="pn">6<small>차시</small></div>
 <div><h2>인공신경망 학습</h2><p class="sub">로봇 제어를 위한 신경망 학습</p><p class="q">우리 모델은 무엇을 보고 배웠나?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>신경망은 어떻게 배우나 · TF Playground<span>덱 106–107</span></li><li>데이터 규칙 · 스크래치에서 정상 · 불량 · 없음 학습<span>덱 108–110</span></li><li>(선택) 티처블머신 웹으로 같은 모델<span>덱 111</span></li><li>미션 · 처음 보는 블록 6개 중 5개<span>덱 112</span></li><li>묻기 · 속이기 게임 · 모델은 데이터에 있는 것을 학습한다<span>덱 113–115</span></li><li>(선택) 미리 학습된 인식과 내가 학습시킨 모델<span>덱 116–117</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>신경망은 어떻게 배우나 · TF Playground<span>덱 130–131</span></li><li>데이터 규칙 · 스크래치에서 정상 · 불량 · 없음 학습<span>덱 132–136</span></li><li>(선택) 티처블머신 웹으로 같은 모델<span>덱 137–138</span></li><li>미션 · 처음 보는 블록 6개 중 5개<span>덱 139</span></li><li>묻기 · 속이기 게임 · 모델은 데이터에 있는 것을 학습한다<span>덱 140–141</span></li><li>(선택) 미리 학습된 인식과 내가 학습시킨 모델<span>덱 142–146</span></li><li>S06 라쿤봇, 판단하라 · 사물 찾기 · 사람 보면 정지 · 색깔마다 다른 동작<span>덱 147–160</span></li></ol></div>
 <div class="side"><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑥</b><span>패들렛 ⑥번 칸<small>모델이 배운 것 · 올리기 ↗</small></span></a><div class="tip">학습 창은 클래스마다 20장이 안 되면 학습을 시작하지 않습니다. 시험용 블록(정상 2 · 불량 2)은 학습에 쓰지 않고, 모델은 「모델 저장하기」로 팀명_v1을 남깁니다.</div></div></div>
 <p class="sublbl">실습 도구 · 눌러서 엽니다</p><div class="tools"><article class="tool" data-cat="idea" id="t-tfpg" style="--c:#2f6bd6">
 <div class="shot"><img src="../assets/thumbs/raccoonbot_tool_tfpg.jpg" alt="TensorFlow Playground 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
@@ -121,29 +124,191 @@ else{document.getElementById("gerr").textContent="코드가 맞지 않습니다.
 <div class="bd"><div class="tags"><span class="chip lv">선택</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>티처블머신</h3><p class="what">웹캠으로 정상 · 불량 · 없음 사진을 모아 웹에서 이미지 분류 모델을 학습시킵니다.</p>
 <p class="try"><b>해 볼 것</b> · 클래스 셋에 웹캠으로 20장씩 찍어 [모델 학습시키기]를 누르고, 같은 시험용 블록으로 스크래치 모델과 비교합니다.</p><div class="tags"><span class="chip need">웹캠</span><span class="chip need">로그인 없음</span></div>
 <div class="ft"><span></span><a class="open" href="https://teachablemachine.withgoogle.com/train/image" target="_blank" rel="noopener">열기 ↗</a></div></div></article></div>
-<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_5_3_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_5_3_5.jpg" alt="(선택) 손을 펴면 놓고, 쥐면 집기 블록 모양" loading="lazy"><div><span class="sl">6차시 · 덱 153장</span><p class="t">(선택) 손을 펴면 놓고, 쥐면 집기</p><p class="d">미리 학습된 손 찾기. 카메라 고르고 깃발 → 손을 펴면 집게가 열리고, 주먹을 쥐면 닫힙니다. 기준값 50을 바꿔 다시</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-5-3-5.sb3" download="S-5-3-5.sb3">내려받기</a></div></div></div>
+<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_5_3_5"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_5_3_5.jpg" alt="(선택) 손을 펴면 놓고, 쥐면 집기 블록 모양" loading="lazy"><div><span class="sl">6차시 · 덱 145 · 146장</span><p class="t">(선택) 손을 펴면 놓고, 쥐면 집기</p><p class="d">미리 학습된 손 찾기. 카메라 고르고 깃발 → 손을 펴면 집게가 열리고, 주먹을 쥐면 닫힙니다. 기준값 50을 바꿔 다시</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/6차시-01_손펴면놓고쥐면집기_선택.sb3" download="6차시-01_손펴면놓고쥐면집기_선택.sb3">내려받기</a></div></div><div class="code" id="c-C_6_02"><div class="cimg none">코드</div><div><span class="sl">6차시 · 덱 149장</span><p class="t">6-1-3~4 · 카메라와 사물 찾기 확인</p><p class="d">덱 149장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/6차시-02_사물찾기확인.sb3" download="6차시-02_사물찾기확인.sb3">내려받기</a></div></div><div class="code" id="c-C_6_03"><div class="cimg none">코드</div><div><span class="sl">6차시 · 덱 150장</span><p class="t">6-1-5 · 움직이다 사람을 보면 정지</p><p class="d">덱 150장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/6차시-03_사람보면정지_시작틀.sb3" download="6차시-03_사람보면정지_시작틀.sb3">내려받기</a></div></div><div class="code" id="c-C_6_04"><div class="cimg none">코드</div><div><span class="sl">6차시 · 덱 152장</span><p class="t">6-1-5 STEP 2 · 사람을 찾으면 멈추고 사이렌</p><p class="d">덱 152장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/6차시-04_사람보면정지.sb3" download="6차시-04_사람보면정지.sb3">내려받기</a></div></div><div class="code" id="c-C_6_05"><div class="cimg none">코드</div><div><span class="sl">6차시 · 덱 155장</span><p class="t">6-2-4 · 네 가지 색깔 찾기 확인</p><p class="d">덱 155장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/6차시-05_네가지색깔찾기.sb3" download="6차시-05_네가지색깔찾기.sb3">내려받기</a></div></div><div class="code" id="c-C_6_06"><div class="cimg none">코드</div><div><span class="sl">6차시 · 덱 159장</span><p class="t">6-2-5 예시 · 초록색 팔 내밀기 · 세 색 합치기</p><p class="d">덱 159장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/6차시-06_색깔마다다른동작.sb3" download="6차시-06_색깔마다다른동작.sb3">내려받기</a></div></div></div>
 </section><section class="period" id="p7"><div class="ph"><div class="pn">7<small>차시</small></div>
 <div><h2>학습 결과 개선</h2><p class="sub">틀린 장면을 더 찍어 다시 학습하기</p><p class="q">학습 정확도 100%면 실제도 100%일까?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>혼동표 · 학습 정확도 100%면 실제도?<span>덱 120</span></li><li>우리 팀 기준값 정하기 · (선택) 위협 회피 회로<span>덱 121–124</span></li><li>틀린 장면 더 찍어 v2 학습 · v1과 비교<span>덱 125</span></li><li>(선택) 색깔 보정 · AI 개발 사이클<span>덱 126–127</span></li><li>8차시에 쓸 모델과 기준값 결정<span>덱 128</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>혼동표 · 학습 정확도 100%면 실제도?<span>덱 163</span></li><li>우리 팀 기준값 정하기 · (선택) 위협 회피 회로<span>덱 164–167</span></li><li>틀린 장면 더 찍어 v2 학습 · v1과 비교<span>덱 168</span></li><li>(선택) 조명이 바뀌면 색깔 보정<span>덱 169</span></li><li>미션 6-3-1 · 색깔을 보고 원기둥 옮기기 · 나만의 블록으로 간결하게<span>덱 170–179</span></li><li>미션 ④ 스마트 팩토리 챌린지 · S06 돌아보기 · AI 개발 사이클<span>덱 180–184</span></li><li>8차시에 쓸 모델과 기준값 결정<span>덱 185</span></li></ol></div>
 <div class="side"><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑦</b><span>패들렛 ⑦번 칸<small>기준값 · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑧</b><span>패들렛 ⑧번 칸<small>위협 회피 · 올리기 ↗</small></span></a><div class="tip">혼동표에서 틀린 장면 하나를 골라 그 클래스에 비슷한 장면을 10장쯤 더 찍습니다. 설정은 그대로 두고 데이터만 더해 팀명_v2로 저장하고, 같은 원기둥으로 v1과 비교합니다.</div></div></div>
 <p class="sublbl">실습 도구 · 눌러서 엽니다</p><div class="tools"><article class="tool" data-cat="idea" id="t-flyescape" style="--c:#2f6bd6">
 <div class="shot"><img src="../assets/thumbs/raccoonbot_tool_flyescape.jpg" alt="초파리 위협 회피 회로 화면" loading="lazy"><span class="chip cat">AI 원리 보기</span></div>
 <div class="bd"><div class="tags"><span class="chip lv">선택</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>초파리 위협 회피 회로</h3><p class="what">뇌도 임계값으로 피할지 말지 정합니다. 잡음을 켜면 헛반응과 놓침이 생깁니다.</p>
 <p class="try"><b>해 볼 것</b> · 임계값과 잡음을 바꿔 헛반응 · 놓침이 어떻게 바뀌는지 보고, 신뢰도 기준값과 연결합니다.</p><div class="tags"><span class="chip need">설치 없음</span></div>
 <div class="ft"><span></span><a class="open" href="https://ak7660.github.io/fly-brain-escape/?present=1" target="_blank" rel="noopener">열기 ↗</a></div></div></article></div>
-
+<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-C_7_01"><div class="cimg none">코드</div><div><span class="sl">7차시 · 덱 172장</span><p class="t">6-3-1 STEP 2 · 찾을 색깔 네 개 추가</p><p class="d">덱 172장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/7차시-01_찾을색깔네개추가.sb3" download="7차시-01_찾을색깔네개추가.sb3">내려받기</a></div></div><div class="code" id="c-C_7_02"><div class="cimg none">코드</div><div><span class="sl">7차시 · 덱 174장</span><p class="t">6-3-1 STEP 3 코드 · 집어 옮겨 놓기</p><p class="d">덱 174장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/7차시-02_노란원기둥옮기기.sb3" download="7차시-02_노란원기둥옮기기.sb3">내려받기</a></div></div><div class="code" id="c-C_7_03"><div class="cimg none">코드</div><div><span class="sl">7차시 · 덱 175장</span><p class="t">6-3-1 STEP 4 · 파란색 갈래 추가</p><p class="d">덱 175장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/7차시-03_파란원기둥까지.sb3" download="7차시-03_파란원기둥까지.sb3">내려받기</a></div></div><div class="code" id="c-C_7_04"><div class="cimg none">코드</div><div><span class="sl">7차시 · 덱 176장</span><p class="t">6-3-1 STEP 5 · 빨간색 · 초록색까지</p><p class="d">덱 176장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/7차시-04_네원기둥옮기기.sb3" download="7차시-04_네원기둥옮기기.sb3">내려받기</a></div></div><div class="code" id="c-C_7_05"><div class="cimg none">코드</div><div><span class="sl">7차시 · 덱 179장</span><p class="t">6-3-1 STEP 6 · 간결해진 전체 코드</p><p class="d">덱 179장의 완성 코드. 열어서 값을 바꿔 가며 실행합니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/7차시-05_집기놓기블록으로간결하게.sb3" download="7차시-05_집기놓기블록으로간결하게.sb3">내려받기</a></div></div></div>
 </section><section class="period" id="p8"><div class="ph"><div class="pn">8<small>차시</small></div>
 <div><h2>학습 로봇 미션 및 나눔</h2><p class="sub">6·7차시에 학습한 모델로 품질검사 로봇을 움직이고, 교실에 가져갈 것을 나눈 뒤 AI 시대의 평가 이야기로 마칩니다</p><p class="q">로봇이 불량을 A로 보냈다면, 누구의 판단이었을까?</p></div></div>
-<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>미션 흐름 · 인식 결과 → 좌표표<span>덱 131–132</span></li><li>내 모델을 라쿤봇에 · 한 번 성공<span>덱 133–134</span></li><li>메인 미션 · AI 품질검사 라인 · 6회<span>덱 135–137</span></li><li>실패 가르기 · 개선 한 바퀴<span>덱 138–139</span></li><li>(확장) 4클래스 분류 · 속이기 게임 2라운드<span>덱 140–141</span></li><li>내 모델로 로봇팔이 움직였다 · 나눔<span>덱 142–143</span></li><li>(선택) 사전 학습 AI 대조 · AI의 판단과 책임<span>덱 144–146</span></li><li>수업 적용 · 가져갈 것 하나<span>덱 147</span></li><li>정리 · 핵심 문장<span>덱 148–149</span></li><li>마무리 이야기 · AI 시대의 평가<span>덱 150–176</span></li><li>장비 정리와 설문<span>덱 177</span></li></ol></div>
+<div class="pgrid"><div><p class="sublbl" style="margin-top:0">이번 차시 흐름</p><ol class="flow"><li>미션 흐름 · 인식 결과 → 좌표표<span>덱 188–189</span></li><li>내 모델을 라쿤봇에 · 한 번 성공<span>덱 190–191</span></li><li>메인 미션 · AI 품질검사 라인 · 6회<span>덱 193–195</span></li><li>실패 가르기 · 개선 한 바퀴<span>덱 196–197</span></li><li>(확장) 4클래스 분류 · 속이기 게임 2라운드<span>덱 198–199</span></li><li>내 모델로 로봇팔이 움직였다 · 나눔<span>덱 200–201</span></li><li>(선택) 사전 학습 AI 대조 · AI의 판단과 책임<span>덱 202–204</span></li><li>수업 적용 · 가져갈 것 하나<span>덱 205</span></li><li>정리 · 핵심 문장<span>덱 206–207</span></li><li>마무리 이야기 · AI 시대의 평가<span>덱 208–234</span></li><li>장비 정리와 설문<span>덱 235</span></li></ol></div>
 <div class="side"><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑨</b><span>패들렛 ⑨번 칸<small>1회 성공(투표) · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑩</b><span>패들렛 ⑩번 칸<small>성공 수 · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑪</b><span>패들렛 ⑪번 칸<small>실패 원인(투표) · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑫</b><span>패들렛 ⑫번 칸<small>수업에 쓸 쪽(투표) · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑬</b><span>패들렛 ⑬번 칸<small>수업 설계 · 올리기 ↗</small></span></a><a class="padbtn" href="https://padlet.com/bangokhs/ai-s02596t2eijrbu6pwrmq" target="_blank" rel="noopener"><b>⑭</b><span>패들렛 ⑭번 칸<small>질문 · 올리기 ↗</small></span></a><div class="tip">틀린 바구니보다 멈춤이 낫습니다. 분류 블록이 결과를 내지 않으면 「모델 적용하기」를 했는지, 모델 번호가 같은지 봅니다.</div></div></div>
 <p class="sublbl">실습 도구 · 눌러서 엽니다</p><div class="tools"><article class="tool" data-cat="learn" id="t-tm-scratch" style="--c:#1fa463">
 <div class="shot"><span class="chip cat">직접 학습</span></div>
 <div class="bd"><div class="tags"><span class="chip lv core">핵심</span><span class="chip st" title="피지컬AI 단계">③ 데이터·시범</span><span class="chip st" title="피지컬AI 단계">④ 학습</span><span class="chip st" title="피지컬AI 단계">⑤ 시뮬레이션 평가</span></div><h3>오프라인 TM 영상 분류 (스크래치)</h3><p class="what">스크래치 확장 기능의 학습 창에서 웹캠으로 정상 · 불량 · 없음을 찍어 내 분류 모델을 학습시키고, 그 모델로 라쿤봇을 움직입니다.</p>
 <p class="try"><b>해 볼 것</b> · 확장 기능 → 인공지능 → 오프라인 TM 영상 분류. 클래스마다 20장 이상 찍고 기본값(에폭 50 · 배치 16 · 학습률 0.001)으로 학습한 뒤 「결과 확인」 → 「모델 적용하기」 · 「모델 저장하기」.</p><div class="tags"><span class="chip need">로봇 코딩 2.2.1</span><span class="chip need">웹캠</span></div>
 <div class="ft"><span></span><a class="open" href="https://hamster.school/ko/download/robotcoding_preview" target="_blank" rel="noopener">열기 ↗</a></div></div></article></div>
-<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_8_2_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_8_2_2.jpg" alt="(확장) 색깔 찾기로 같은 선별 미션 블록 모양" loading="lazy"><div><span class="sl">8차시 · 덱 184장</span><p class="t">(확장) 색깔 찾기로 같은 선별 미션</p><p class="d">확장 기능 → 인공지능 → 색깔 찾기. 빨강 · 노랑은 A, 파랑 · 초록은 B. 우리 「불량」도 찾을 수 있는지 봅니다</p></div>
-<div class="btns"><a class="dl" href="../raccoonbot/codes/S-8-2-2.sb3" download="S-8-2-2.sb3">내려받기</a></div></div></div>
+<p class="sublbl">스크래치 코드 · 열어서 고쳐 씁니다</p><div class="codes"><div class="code" id="c-S_8_2_2"><img class="cimg" src="../assets/thumbs/raccoonbot_code_S_8_2_2.jpg" alt="(확장) 색깔 찾기로 같은 선별 미션 블록 모양" loading="lazy"><div><span class="sl">8차시 · 덱 202장</span><p class="t">(확장) 색깔 찾기로 같은 선별 미션</p><p class="d">확장 기능 → 인공지능 → 색깔 찾기. 빨강 · 노랑은 A, 파랑 · 초록은 B. 우리 「불량」도 찾을 수 있는지 봅니다</p></div>
+<div class="btns"><a class="dl" href="../raccoonbot/codes/8차시-01_색깔찾기로선별_확장.sb3" download="8차시-01_색깔찾기로선별_확장.sb3">내려받기</a></div></div></div>
 </section></main>
 <footer><div class="wrap"><span>피지컬AI 실습실</span><span>제작 · <b>반곡고 기술교사</b></span></div></footer>
-<script src="../assets/site.js"></script></body></html>
+<script src="../assets/site.js"></script><style id="code-gate-css">/* code-gate v1 · 「코드 받기」 잠금 모양 (덱 .code-get + 실습실 .dl 공용). deploy 때 <style>로 넣는다. */
+a.cg-locked{border-color:#b9b5aa!important;color:#8a867c!important;background:#f3f1ec!important;box-shadow:0 3px 0 #b9b5aa!important;cursor:not-allowed}
+a.cg-locked svg{filter:grayscale(1);opacity:.55}
+a.cg-locked:hover{background:#ece9e2!important}
+a.cg-busy{opacity:.6;cursor:progress}
+a .cg-note{display:none}
+a.cg-locked .cg-note{display:inline;font-size:.72em;font-weight:700;margin-left:2px;white-space:nowrap}
+/* 덱 단추는 장 오른쪽 위에 떠 있으므로 폭을 늘리지 않고 단추 바로 아래에 붙인다(제목과 겹침 방지) */
+a.code-get.cg-locked .cg-note{position:absolute;top:calc(100% + 6px);right:0;margin:0;padding:2px 10px;border-radius:8px;background:#f3f1ec;color:#6f6b61;font-size:19px}
+#cg-pop{position:fixed;left:50%;bottom:28px;translate:-50% 0;z-index:2147483000;width:min(440px,calc(100vw - 32px));background:#fff;border:2px solid #e2ded2;border-radius:18px;
+  padding:18px 20px;box-shadow:0 14px 36px rgba(0,0,0,.18);font:500 15px/1.5 "Paperlogy","Pretendard","Malgun Gothic",system-ui,sans-serif;color:#16150f}
+#cg-pop[hidden]{display:none}
+#cg-pop h3{margin:0 0 4px;font-size:18px;font-weight:800}
+#cg-pop p{margin:0 0 10px;color:#6f6b61}
+#cg-pop .row{display:flex;gap:8px}
+#cg-pop input{flex:1;min-width:0;font-family:inherit;font-size:22px;font-weight:800;letter-spacing:.25em;text-align:center;padding:8px;border:2px solid #e2ded2;border-radius:12px;outline:none}
+#cg-pop input:focus{border-color:#1fa463}
+#cg-pop button{font-family:inherit;font-size:15px;font-weight:800;border:0;border-radius:12px;padding:0 16px;cursor:pointer;color:#fff;background:#1fa463}
+#cg-pop button.x{position:absolute;top:8px;right:8px;background:none;color:#9b978c;padding:4px 8px;font-size:20px}
+#cg-pop .err{min-height:20px;margin:8px 0 0;color:#b42318;font-size:14px}
+/* 강사용 덱: 단추 아래 「연수생: 열림/잠김」 스위치 */
+a .cg-sw{position:absolute;top:calc(100% + 6px);right:0;padding:3px 12px;border-radius:8px;font-size:19px;font-weight:800;white-space:nowrap;color:#fff;background:#8a867c;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+a .cg-sw.on{background:#1fa463}a .cg-sw.wait{background:#d59b00}
+a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
+</style><script id="code-gate">window.CODE_GATE={"slug": "raccoonbot"};
+/* code-gate v2 · 「코드 받기」 코드별 잠금 (2026-11-26)
+ * 쓰는 곳: 배포 덱(deck.html·teacher.html)과 실습실 index.html·codes.html. deploy_lab.py가 encrypt_sb3.inject()로 넣는다.
+ * 원리
+ *  - 배포본 codes/ 에는 평문 .sb3가 없고, 코드마다 다른 열쇠로 암호화한 .sb3.enc만 있다(AES-GCM, 열쇠 = PBKDF2(그 코드의 여섯 자리 현장 코드)).
+ *  - 코드 ID는 파일 이름 앞부분: 「3차시-00a_….sb3」 → 3-00a. 한 코드를 열어도 다른 코드는 풀리지 않는다.
+ *  - 관리(강사용 덱의 「코드 관리」 또는 로컬 admin.html)가 코드를 열면 저장소 gate/raccoonbot.json 의 open에 그 코드의 현장 코드를 적는다 → Pages 반영 30초쯤.
+ *  - 이 스크립트는 그 JSON을 30초마다 읽어 열린 코드의 단추를 켜고, 누르면 .enc를 받아 브라우저에서 풀어 .sb3로 저장한다.
+ *  - 잠긴 단추는 회색 + 「강사가 열면 받을 수 있어요」. 누르면 강사가 불러 준 현장 코드를 넣는 작은 창이 뜬다.
+ *  - 강사용 덱은 CODE_GATE.codes(모든 현장 코드)를 받아 항상 열림. CODE_GATE.admin이면 단추마다 「연수생: 열림/잠김」 스위치를 붙인다.
+ *  - file:// 로 연 원본 덱은 sb3/ 평문을 그대로 쓰므로 아무것도 하지 않는다.
+ */
+(function () {
+  if (location.protocol === 'file:' || !window.crypto || !crypto.subtle) return;
+  var CFG = window.CODE_GATE || {};
+  var SLUG = CFG.slug || 'raccoonbot';
+  var STATE_URL = CFG.stateUrl || '../gate/' + SLUG + '.json';
+  var ITER = 600000, POLL = 30000;
+  var SEL = 'a.code-get, a.dl[href*=".sb3"]';
+  var LS = 'cg-' + SLUG + '-';
+  var ALL = CFG.codes || null;           // 강사용: {id: {code, file}}
+  var server = {};                       // 공개 JSON에서 열린 코드 → 현장 코드
+  var typed = read(LS + 'typed') || {};  // 연수생이 직접 넣은 현장 코드
+  var keys = {};
+
+  function read(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (_) { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) {} }
+  function hrefOf(a) { return a.getAttribute('href') || ''; }
+  function baseOf(a) { try { return decodeURIComponent(hrefOf(a).split('?')[0].split('/').pop()); } catch (_) { return hrefOf(a).split('/').pop(); } }
+  function idOf(a) { var m = baseOf(a).match(/^(\d+)차시-([0-9A-Za-z]+)_/); return m ? m[1] + '-' + m[2] : null; }
+  function nameOf(a) { return a.getAttribute('download') || baseOf(a).replace(/\.enc$/, ''); }
+  function codeFor(id) { return (ALL && ALL[id] && ALL[id].code) || server[id] || typed[id] || null; }
+  function u8(s) { return new TextEncoder().encode(s); }
+
+  function keyFor(id, code) {
+    var k = id + ':' + code;
+    if (!keys[k]) keys[k] = crypto.subtle.digest('SHA-256', u8('physai-lab-sb3:' + SLUG + ':' + id)).then(function (h) {
+      return crypto.subtle.importKey('raw', u8(code), 'PBKDF2', false, ['deriveKey']).then(function (m) {
+        return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: new Uint8Array(h).slice(0, 16), iterations: ITER, hash: 'SHA-256' },
+          m, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      });
+    });
+    return keys[k];
+  }
+  function fetchPlain(a, id, code) {     // .enc 받기 → 풀기. 현장 코드가 틀리면 decrypt에서 실패한다.
+    var url = hrefOf(a).replace(/\.enc$/, '') + '.enc';
+    return fetch(url, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('net'); return r.arrayBuffer(); }, function () { throw new Error('net'); })
+      .then(function (b) { return keyFor(id, code).then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(b, 0, 12) }, k, new Uint8Array(b, 12)); }); });
+  }
+  function giveFile(buf, name) {
+    var u = URL.createObjectURL(new Blob([buf], { type: 'application/x.scratch.sb3' }));
+    var t = document.createElement('a'); t.href = u; t.download = name; t.style.display = 'none';
+    document.body.appendChild(t); t.click(); setTimeout(function () { URL.revokeObjectURL(u); t.remove(); }, 5000);
+  }
+
+  function paint() {
+    var admin = CFG.admin && window.CodeGateAdmin;
+    [].forEach.call(document.querySelectorAll(SEL), function (a) {
+      var id = idOf(a); if (!id) return;
+      if (!a.hasAttribute('data-cg-title')) a.setAttribute('data-cg-title', a.getAttribute('title') || '');
+      if (!ALL && !a.querySelector('.cg-note')) { var s = document.createElement('small'); s.className = 'cg-note'; s.textContent = '강사가 열면 받을 수 있어요'; a.appendChild(s); }
+      var open = !!codeFor(id);
+      a.classList.toggle('cg-locked', !open);
+      a.setAttribute('aria-disabled', open ? 'false' : 'true');
+      a.title = open ? a.getAttribute('data-cg-title') : id + ' 코드는 아직 잠겨 있어요. 강사가 열면 받을 수 있어요.';
+      if (admin) {                         // 강사용: 연수생 쪽 열림 스위치
+        var sw = a.querySelector('.cg-sw');
+        if (!sw) { sw = document.createElement('span'); sw.className = 'cg-sw'; sw.setAttribute('role', 'button'); sw.setAttribute('data-id', id); a.appendChild(sw); }
+        var st = CodeGateAdmin.status(id);   // 'on' | 'off' | 'wait'
+        sw.className = 'cg-sw ' + st;
+        sw.textContent = st === 'wait' ? '연수생: 반영 중…' : st === 'on' ? '연수생: 열림 · 끄기' : '연수생: 잠김 · 켜기';
+      }
+    });
+  }
+  function poll() {
+    return fetch(STATE_URL + '?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) { server = (j && j.open) || {}; save(LS + 'last', server); }, function () { server = read(LS + 'last') || {}; })
+      .then(paint);
+  }
+
+  var pop, popA;                         // 잠긴 단추를 눌렀을 때 뜨는 작은 창
+  function ask(a, id, msg) {
+    if (!pop) {
+      pop = document.createElement('div'); pop.id = 'cg-pop'; pop.hidden = true; pop.setAttribute('role', 'dialog');
+      pop.innerHTML = '<button class="x" type="button" aria-label="닫기">×</button><h3></h3><p>강사가 열면 바로 받을 수 있어요. 강사가 코드를 불러 주었다면 여기에 넣어 주세요.</p>' +
+        '<form class="row"><input inputmode="numeric" maxlength="6" pattern="[0-9]*" autocomplete="off" aria-label="현장 코드"><button type="submit">받기</button></form><p class="err"></p>';
+      document.body.appendChild(pop);
+      pop.querySelector('.x').onclick = function () { pop.hidden = true; };
+      pop.addEventListener('keydown', function (e) { e.stopPropagation(); if (e.key === 'Escape') pop.hidden = true; });
+      pop.querySelector('form').onsubmit = function (e) {
+        e.preventDefault();
+        var a = popA, id = idOf(a), code = pop.querySelector('input').value.trim(), err = pop.querySelector('.err');
+        if (!/^\d{6}$/.test(code)) { err.textContent = '여섯 자리 숫자를 넣어 주세요.'; return; }
+        err.textContent = '확인하는 중…';
+        fetchPlain(a, id, code).then(function (buf) {
+          typed[id] = code; save(LS + 'typed', typed); pop.hidden = true; paint(); giveFile(buf, nameOf(a));
+        }, function (x) { err.textContent = x && x.message === 'net' ? '파일을 받지 못했어요. 인터넷 연결을 확인해 주세요.' : '코드가 맞지 않아요. 다시 확인해 주세요.'; });
+      };
+    }
+    popA = a; pop.querySelector('h3').textContent = id + ' 코드는 아직 잠겨 있어요';
+    pop.querySelector('.err').textContent = msg || ''; pop.querySelector('input').value = ''; pop.hidden = false;
+    setTimeout(function () { pop.querySelector('input').focus(); }, 0);
+  }
+  function go(a, id, code) {
+    a.classList.add('cg-busy');
+    fetchPlain(a, id, code).then(function (buf) { giveFile(buf, nameOf(a)); }, function (x) {
+      if (x && x.message === 'net') alert('파일을 받지 못했어요. 인터넷 연결을 확인해 주세요.');
+      else { delete typed[id]; save(LS + 'typed', typed); ask(a, id, '저장된 코드가 맞지 않아요. 강사에게 다시 받아 주세요.'); }
+    }).then(function () { a.classList.remove('cg-busy'); });
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest(SEL); if (!a) return;
+    var id = idOf(a); if (!id) return;
+    e.preventDefault(); e.stopPropagation();
+    var sw = e.target.closest('.cg-sw');
+    if (sw) { if (window.CodeGateAdmin) CodeGateAdmin.toggle(id); return; }
+    if (a.classList.contains('cg-busy')) return;
+    var code = codeFor(id);
+    if (!code) { poll().then(function () { var c2 = codeFor(id); if (c2) go(a, id, c2); else ask(a, id); }); return; }   // 방금 열렸을 수도 있어 한 번 더 확인
+    go(a, id, code);
+  }, true);
+
+  window.CodeGate = { paint: paint, poll: poll };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', poll); else poll();
+  setInterval(function () { if (!document.hidden) poll(); }, POLL);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
+})();
+</script></body></html>
