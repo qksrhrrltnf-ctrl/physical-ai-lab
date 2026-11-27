@@ -276,7 +276,11 @@ a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
       return fetch(u + '?t=' + Date.now(), { cache: 'no-store', signal: c ? c.signal : undefined })
         .then(function (r) { clearTimeout(t); if (!r.ok) throw 0; return r.json(); }, function (e) { clearTimeout(t); throw e; });
     }
-    return get(RAW_URL).catch(function () { return get(STATE_URL); })
+    function nul() { return null; }      // raw는 몇 분씩 옛 판을 줄 때가 있어(2026-11-27 4분) 두 주소를 다 읽고 updated가 새것을 쓴다
+    return Promise.all([get(RAW_URL).catch(nul), get(STATE_URL).catch(nul)]).then(function (x) {
+      var a = x[0], b = x[1]; if (!a && !b) throw 0;
+      return !a ? b : !b ? a : ((b.updated || '') > (a.updated || '') ? b : a);
+    })
       .then(function (j) { server = (j && j.open) || {}; save(LS + 'last', server); }, function () { server = read(LS + 'last') || {}; })
       .then(paint);
   }
