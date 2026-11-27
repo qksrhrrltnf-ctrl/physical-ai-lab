@@ -89,6 +89,10 @@ a.code-get.cg-locked .cg-note{position:absolute;top:calc(100% + 6px);right:0;mar
 a .cg-sw{position:absolute;top:calc(100% + 6px);right:0;padding:3px 12px;border-radius:8px;font-size:19px;font-weight:800;white-space:nowrap;color:#fff;background:#8a867c;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.15)}
 a .cg-sw.on{background:#1fa463}a .cg-sw.wait{background:#d59b00}
 a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
+
+/* 정답 코드 덮개가 잠겼을 때 (2026-11-27) */
+.ans-veil.cg-locked{cursor:not-allowed}
+.ans-veil.cg-locked .ans-cover b{background:#8a867c}
 </style><script id="code-gate">window.CODE_GATE={"slug": "raccoonbot"};
 /* code-gate v2 · 「코드 받기」 코드별 잠금 (2026-11-26)
  * 쓰는 곳: 배포 덱(deck.html·teacher.html)과 실습실 index.html·codes.html. deploy_lab.py가 encrypt_sb3.inject()로 넣는다.
@@ -164,16 +168,27 @@ a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
         sw.textContent = st === 'wait' ? '연수생: 반영 중…' : st === 'on' ? '연수생: 열림 · 끄기' : '연수생: 잠김 · 켜기';
       }
     });
+    [].forEach.call(document.querySelectorAll('.ans-veil[data-code]'), function (v) {   // 정답 코드 덮개도 같은 잠금
+      var open = !!codeFor(v.getAttribute('data-code')), sm = v.querySelector('.ans-cover small');
+      v.classList.toggle('cg-locked', !open);
+      if (!open) v.classList.remove('open');
+      if (sm) sm.textContent = open ? '먼저 만들어 본 뒤 눌러서 확인' : '강사가 열면 볼 수 있어요';
+    });
   }
   function poll() {
-    function get(u) { return fetch(u + '?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+    function get(u) {                    // 5초 안에 답이 없으면 포기(네트워크가 걸려도 단추·덮개가 멈추지 않게)
+      var c = window.AbortController ? new AbortController() : null, t = c && setTimeout(function () { c.abort(); }, 5000);
+      return fetch(u + '?t=' + Date.now(), { cache: 'no-store', signal: c ? c.signal : undefined })
+        .then(function (r) { clearTimeout(t); if (!r.ok) throw 0; return r.json(); }, function (e) { clearTimeout(t); throw e; });
+    }
     return get(RAW_URL).catch(function () { return get(STATE_URL); })
       .then(function (j) { server = (j && j.open) || {}; save(LS + 'last', server); }, function () { server = read(LS + 'last') || {}; })
       .then(paint);
   }
 
-  var pop, popA;                         // 잠긴 단추를 눌렀을 때 뜨는 작은 창
-  function ask(a, id, msg) {
+  var pop, popA, popOk;                  // 잠긴 단추를 눌렀을 때 뜨는 작은 창 (popOk: 덮개에서 열었으면 받기 대신 덮개 열기)
+  function ask(a, id, msg, ok) {
+    popOk = ok || null;
     if (!pop) {
       pop = document.createElement('div'); pop.id = 'cg-pop'; pop.hidden = true; pop.setAttribute('role', 'dialog');
       pop.innerHTML = '<button class="x" type="button" aria-label="닫기">×</button><h3></h3><p>강사가 열면 바로 받을 수 있어요. 강사가 코드를 불러 주었다면 여기에 넣어 주세요.</p>' +
@@ -187,7 +202,8 @@ a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
         if (!/^\d{6}$/.test(code)) { err.textContent = '여섯 자리 숫자를 넣어 주세요.'; return; }
         err.textContent = '확인하는 중…';
         fetchPlain(a, id, code).then(function (buf) {
-          typed[id] = code; save(LS + 'typed', typed); pop.hidden = true; paint(); giveFile(buf, nameOf(a));
+          typed[id] = code; save(LS + 'typed', typed); pop.hidden = true; paint();
+          if (popOk) popOk(); else giveFile(buf, nameOf(a));
         }, function (x) { err.textContent = x && x.message === 'net' ? '파일을 받지 못했어요. 인터넷 연결을 확인해 주세요.' : '코드가 맞지 않아요. 다시 확인해 주세요.'; });
       };
     }
@@ -215,8 +231,22 @@ a.dl .cg-sw{position:static;margin-left:6px;font-size:13px}
     go(a, id, code);
   }, true);
 
-  window.CodeGate = { paint: paint, poll: poll };
+  function see(v) {                      // 덮개를 열어도 되나: 그 코드가 열렸을 때만. 아니면 한 번 더 확인 → 현장 코드 창
+    var id = v.getAttribute('data-code'); if (!id || codeFor(id)) return true;
+    var a = document.querySelector('a.code-get[data-code="' + id + '"]') || document.querySelector('a.code-get[href*="' + id.replace('-', '차시-') + '_"]');
+    if (a) ask(a, id, '', function () { v.classList.add('open'); });          // 창부터 띄우고
+    poll().then(function () { if (codeFor(id)) { if (pop) pop.hidden = true; v.classList.add('open'); } });   // 그새 강사가 열었으면 바로 열기
+    return false;
+  }
+
+  window.CodeGate = { paint: paint, poll: poll, see: see };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', poll); else poll();
+  (function early(n) {                   // 교안은 암호를 푼 뒤에 장이 생기므로, 새 단추·덮개가 보이면 바로 칠한다(30초 기다리지 않게)
+    if (document.querySelector(SEL + ':not([data-cg-title]), .ans-veil[data-code]:not(.cg-locked):not(.cg-seen)')) {
+      paint(); [].forEach.call(document.querySelectorAll('.ans-veil[data-code]'), function (v) { v.classList.add('cg-seen'); });
+    }
+    if (n < 180) setTimeout(function () { early(n + 1); }, 1000);
+  })(0);
   setInterval(function () { if (!document.hidden) poll(); }, POLL);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) poll(); });
 })();
